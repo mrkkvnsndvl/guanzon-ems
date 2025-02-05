@@ -1,0 +1,126 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="986.0" prefWidth="1656.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonemployeemanagementsystem.controller.EmployeeController">
+    <stylesheets>
+        <URL value="@/com/project/guanzonemployeemanagementsystem/css/styles.css" />
+    </stylesheets>
+    <children>
+        <VBox styleClass="spacing-6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox spacing="1264.0">
+                    <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departments">
+                            <styleClass>
+                                <String fx:value="text-lg" />
+                                <String fx:value="font-bold" />
+                                <String fx:value="fill-zinc-950" />
+                            </styleClass>
+                        </Text>
+                        <HBox styleClass="spacing-3">
+                            <children>
+                                <Button mnemonicParsing="false" onAction="#handleRefresh" text="Refresh">
+                                    <styleClass>
+                                        <String fx:value="text-base" />
+                                        <String fx:value="bg-transparent" />
+                                        <String fx:value="text-fill-zinc-950" />
+                                        <String fx:value="cursor-pointer" />
+                                        <String fx:value="refresh-button" />
+                                        <String fx:value="bg-rounded-lg" />
+                                    </styleClass>
+                                </Button>
+                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddEmployee" text="Add department">
+                                    <styleClass>
+                                        <String fx:value="text-base" />
+                                        <String fx:value="bg-orange-500" />
+                                        <String fx:value="text-fill-zinc-50" />
+                                        <String fx:value="cursor-pointer" />
+                                        <String fx:value="bg-rounded-lg" />
+                                    </styleClass>
+                                </Button>
+                            </children>
+                        </HBox>
+                    </children>
+                    <styleClass>
+                        <String fx:value="p-6" />
+                        <String fx:value="align-center" />
+                    </styleClass>
+                </HBox>
+                <HBox>
+                    <children>
+                        <TextField onAction="#handleSearchEmployee" promptText="Search department...">
+                            <styleClass>
+                                <String fx:value="bg-transparent" />
+                                <String fx:value="border" />
+                                <String fx:value="border-zinc-200" />
+                                <String fx:value="rounded-lg" />
+                            </styleClass>
+                            <padding>
+                                <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                            </padding>
+                        </TextField>
+                    </children>
+                    <styleClass>
+                        <String fx:value="align-center-right" />
+                        <String fx:value="px-6" />
+                    </styleClass>
+                </HBox>
+                <VBox prefWidth="1656.0" styleClass="px-6">
+                    <children>
+                        <TableView prefHeight="626.0" prefWidth="1608.0">
+                            <columns>
+                                <TableColumn prefWidth="75.0" styleClass="bg-transparent" text="Id" />
+                                <TableColumn prefWidth="215.0" styleClass="bg-transparent" text="Department" />
+                            </columns>
+                            <styleClass>
+                                <String fx:value="border-zinc-200" />
+                                <String fx:value="bg-rounded-lg" />
+                                <String fx:value="border" />
+                                <String fx:value="rounded-lg" />
+                            </styleClass>
+                        </TableView>
+                    </children>
+                </VBox>
+                <HBox>
+                    <children>
+                        <Button layoutX="1566.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleDeleteEmployee" text="Delete">
+                            <styleClass>
+                                <String fx:value="bg-transparent" />
+                                <String fx:value="text-fill-zinc-950" />
+                                <String fx:value="text-base" />
+                                <String fx:value="bg-rounded-lg" />
+                                <String fx:value="cursor-pointer" />
+                        <String fx:value="delete-button" />
+                            </styleClass>
+                        </Button>
+                        <Button mnemonicParsing="false" onAction="#handleUpdateEmployee" text="Update">
+                            <styleClass>
+                                <String fx:value="bg-orange-500" />
+                                <String fx:value="text-fill-zinc-50" />
+                                <String fx:value="text-base" />
+                                <String fx:value="bg-rounded-lg" />
+                                <String fx:value="cursor-pointer" />
+                            </styleClass>
+                        </Button>
+                    </children>
+                    <styleClass>
+                        <String fx:value="p-6" />
+                        <String fx:value="align-center-right" />
+                        <String fx:value="spacing-3" />
+                    </styleClass>
+                </HBox>
+            </children>
+        </VBox>
+    </children>
+</AnchorPane>
