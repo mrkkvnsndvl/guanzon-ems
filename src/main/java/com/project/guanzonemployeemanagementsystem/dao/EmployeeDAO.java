@@ -1,7 +1,7 @@
 package com.project.guanzonemployeemanagementsystem.dao;
 
 import com.project.guanzonemployeemanagementsystem.model.Employee;
-import com.project.guanzonemployeemanagementsystem.util.DatabaseUtil;
+import com.project.guanzonemployeemanagementsystem.utilities.DatabaseUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +9,6 @@ import java.util.List;
 
 public class EmployeeDAO {
 
-    // Create
     public void addEmployee(Employee employee) throws SQLException {
         String sql = "INSERT INTO employees (full_name, age, email, phone_number, position, department, date_of_joining, salary) VALUES (?, ?, ?, ?, ?, ?, ?, ?)";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -25,7 +24,6 @@ public class EmployeeDAO {
         }
     }
 
-    // Read
     public List<Employee> getAllEmployees() throws SQLException {
         List<Employee> employees = new ArrayList<>();
         String sql = "SELECT * FROM employees";
@@ -47,7 +45,6 @@ public class EmployeeDAO {
         return employees;
     }
 
-    // Update
     public void updateEmployee(Employee employee) throws SQLException {
         String sql = "UPDATE employees SET full_name = ?, age = ?, email = ?, phone_number = ?, position = ?, department = ?, date_of_joining = ?, salary = ? WHERE id = ?";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -64,7 +61,6 @@ public class EmployeeDAO {
         }
     }
 
-    // Delete
     public void deleteEmployee(int lnId) throws SQLException {
         String sql = "DELETE FROM employees WHERE id = ?";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {

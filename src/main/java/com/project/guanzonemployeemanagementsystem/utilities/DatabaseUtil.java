@@ -1,4 +1,4 @@
-package com.project.guanzonemployeemanagementsystem.util;
+package com.project.guanzonemployeemanagementsystem.utilities;
 
 import java.sql.Connection;
 import java.sql.DriverManager;

@@ -67,7 +67,7 @@
                               <String fx:value="fill-zinc-950" />
                            </styleClass>
                         </Label>
-                        <TextField>
+                        <TextField fx:id="emailTextField">
                            <styleClass>
                               <String fx:value="bg-transparent" />
                               <String fx:value="border" />
@@ -78,7 +78,7 @@
                               <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                            </padding>
                         </TextField>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                        <Text fx:id="emailValidationText" strokeType="OUTSIDE" strokeWidth="0.0">
                            <styleClass>
                               <String fx:value="text-xs" />
                               <String fx:value="fill-red-500" />
@@ -94,7 +94,7 @@
                               <String fx:value="fill-zinc-950" />
                            </styleClass>
                         </Label>
-                        <PasswordField>
+                        <PasswordField fx:id="passwordPasswordField">
                            <styleClass>
                               <String fx:value="bg-transparent" />
                               <String fx:value="border" />
@@ -105,7 +105,7 @@
                               <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                            </padding>
                         </PasswordField>
-                        <Text strokeType="OUTSIDE" strokeWidth="0.0">
+                        <Text fx:id="passwordValidationText" strokeType="OUTSIDE" strokeWidth="0.0">
                            <styleClass>
                               <String fx:value="text-xs" />
                               <String fx:value="fill-red-500" />
@@ -115,7 +115,7 @@
                   </VBox>
                   <VBox GridPane.columnSpan="2" GridPane.rowIndex="2">
                      <children>
-                        <Button mnemonicParsing="false" prefWidth="342.0" text="Sign in">
+                        <Button mnemonicParsing="false" onAction="#signInButtonOnAction" prefWidth="342.0" text="Sign in">
                            <padding>
                               <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                            </padding>

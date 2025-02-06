@@ -32,7 +32,7 @@
                         </Text>
                         <HBox styleClass="spacing-3">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#handleRefresh" text="Refresh">
+                                <Button mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh">
                                     <styleClass>
                                         <String fx:value="text-base" />
                                         <String fx:value="bg-transparent" />
@@ -42,7 +42,7 @@
                                         <String fx:value="bg-rounded-lg" />
                                     </styleClass>
                                 </Button>
-                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddEmployee" text="Add employee">
+                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addEmployeeButtonOnAction" text="Add employee">
                                     <styleClass>
                                         <String fx:value="text-base" />
                                         <String fx:value="bg-orange-500" />
@@ -61,7 +61,7 @@
                 </HBox>
                 <HBox>
                     <children>
-                        <TextField fx:id="searchEmployeeField" onAction="#handleSearchEmployee" promptText="Search employee...">
+                        <TextField fx:id="searchEmployeeTextField" onAction="#searchEmployeeFieldOnAction" promptText="Search employee...">
                             <styleClass>
                                 <String fx:value="bg-transparent" />
                                 <String fx:value="border" />
@@ -75,7 +75,7 @@
                   <VBox styleClass="spacing-1">
                      <children>
                         <Label styleClass="fill-zinc-950" text="Position" />
-                        <ChoiceBox fx:id="choiceBox" prefWidth="110.0">
+                        <ChoiceBox fx:id="positionChoiceBox" prefWidth="110.0">
                            <padding>
                               <Insets bottom="4.0" top="4.0" />
                            </padding>
@@ -91,7 +91,7 @@
                   <VBox layoutX="1532.0" layoutY="10.0" styleClass="spacing-1">
                      <children>
                         <Label styleClass="fill-zinc-950" text="Department" />
-                        <ChoiceBox fx:id="choiceBox1" prefWidth="110.0">
+                        <ChoiceBox fx:id="departmentChoiceBox" prefWidth="110.0">
                            <padding>
                               <Insets bottom="4.0" top="4.0" />
                            </padding>
@@ -113,17 +113,17 @@
                 </HBox>
                 <VBox prefWidth="1656.0" styleClass="px-6">
                     <children>
-                        <TableView fx:id="employeeTable" prefHeight="606.0" prefWidth="1608.0">
+                        <TableView fx:id="employeeTableView" prefHeight="606.0" prefWidth="1608.0">
                             <columns>
-                                <TableColumn fx:id="idColumn" prefWidth="75.0" styleClass="bg-transparent" text="Id" />
-                                <TableColumn fx:id="fullNameColumn" prefWidth="215.0" styleClass="bg-transparent" text="Fullname" />
-                                <TableColumn fx:id="ageColumn" prefWidth="75.0" styleClass="bg-transparent" text="Age" />
-                                <TableColumn fx:id="emailColumn" prefWidth="215.0" styleClass="bg-transparent" text="Email" />
-                                <TableColumn fx:id="phoneNumberColumn" prefWidth="145.0" styleClass="bg-transparent" text="Phone number" />
-                                <TableColumn fx:id="positionColumn" prefWidth="155.0" styleClass="bg-transparent" text="Position" />
-                                <TableColumn fx:id="departmentColumn" prefWidth="155.0" styleClass="bg-transparent" text="Department" />
-                                <TableColumn fx:id="dateOfJoiningColumn" prefWidth="135.0" styleClass="bg-transparent" text="Date of joining" />
-                                <TableColumn fx:id="salaryColumn" prefWidth="125.0" styleClass="bg-transparent" text="Salary" />
+                                <TableColumn fx:id="idTableColumn" prefWidth="75.0" styleClass="bg-transparent" text="Id" />
+                                <TableColumn fx:id="fullNameTableColumn" prefWidth="215.0" styleClass="bg-transparent" text="Fullname" />
+                                <TableColumn fx:id="ageTableColumn" prefWidth="75.0" styleClass="bg-transparent" text="Age" />
+                                <TableColumn fx:id="emailTableColumn" prefWidth="215.0" styleClass="bg-transparent" text="Email" />
+                                <TableColumn fx:id="phoneNumberTableColumn" prefWidth="145.0" styleClass="bg-transparent" text="Phone number" />
+                                <TableColumn fx:id="positionTableColumn" prefWidth="155.0" styleClass="bg-transparent" text="Position" />
+                                <TableColumn fx:id="departmentTableColumn" prefWidth="155.0" styleClass="bg-transparent" text="Department" />
+                                <TableColumn fx:id="dateOfJoiningTableColumn" prefWidth="135.0" styleClass="bg-transparent" text="Date of joining" />
+                                <TableColumn fx:id="salaryTableColumn" prefWidth="125.0" styleClass="bg-transparent" text="Salary" />
                             </columns>
                             <styleClass>
                                 <String fx:value="border-zinc-200" />
@@ -136,7 +136,7 @@
                 </VBox>
                 <HBox>
                     <children>
-                        <Button layoutX="1566.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleDeleteEmployee" text="Delete">
+                        <Button layoutX="1566.0" layoutY="34.0" mnemonicParsing="false" onAction="#deleteEmployeeButtonOnAction" text="Delete employee">
                             <styleClass>
                                 <String fx:value="bg-transparent" />
                                 <String fx:value="text-fill-zinc-950" />
@@ -146,7 +146,7 @@
                         <String fx:value="delete-button" />
                             </styleClass>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleUpdateEmployee" text="Update">
+                        <Button mnemonicParsing="false" onAction="#updateEmployeeButtonOnAction" text="Update employee">
                             <styleClass>
                                 <String fx:value="bg-orange-500" />
                                 <String fx:value="text-fill-zinc-50" />

@@ -1,7 +1,7 @@
 package com.project.guanzonemployeemanagementsystem.dao;
 
 import com.project.guanzonemployeemanagementsystem.model.Department;
-import com.project.guanzonemployeemanagementsystem.util.DatabaseUtil;
+import com.project.guanzonemployeemanagementsystem.utilities.DatabaseUtil;
 
 import java.sql.*;
 import java.util.ArrayList;
@@ -9,7 +9,6 @@ import java.util.List;
 
 public class DepartmentDAO {
 
-    // Create
     public void addDepartment(Department department) throws SQLException {
         String sql = "INSERT INTO departments (department_name) VALUES (?)";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -18,7 +17,6 @@ public class DepartmentDAO {
         }
     }
 
-    // Read
     public List<Department> getAllDepartments() throws SQLException {
         List<Department> departments = new ArrayList<>();
         String sql = "SELECT * FROM departments";
@@ -33,7 +31,6 @@ public class DepartmentDAO {
         return departments;
     }
 
-    // Update
     public void updateDepartment(Department department) throws SQLException {
         String sql = "UPDATE departments SET department_name = ? WHERE id = ?";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
@@ -43,7 +40,6 @@ public class DepartmentDAO {
         }
     }
 
-    // Delete
     public void deleteDepartment(int lnId) throws SQLException {
         String sql = "DELETE FROM departments WHERE id = ?";
         try (Connection conn = DatabaseUtil.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {

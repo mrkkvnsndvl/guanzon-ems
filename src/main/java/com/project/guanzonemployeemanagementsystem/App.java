@@ -20,10 +20,8 @@ public class App extends Application {
         Image icon = new Image("/com/project/guanzonemployeemanagementsystem/images/guanzon-logo.png");
 
         stage.getIcons().add(icon);
-        stage.setTitle("Employee Management System");
+        stage.setTitle("Guanzon EMS");
         stage.setResizable(true);
-        stage.setMinWidth(800);
-        stage.setMinHeight(600);
         stage.setMaximized(true);
         stage.setScene(scene);
         stage.show();
@@ -41,5 +39,4 @@ public class App extends Application {
     public static void main(String[] args) {
         launch();
     }
-
 }

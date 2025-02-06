@@ -6536,10 +6536,6 @@
     -fx-background-color: #e4e4e7;
 }
 
-.sidebar-button:hover {
-    -fx-background-color: #e4e4e7;
-}
-
 .card-counts:hover {
     -fx-border-color: #09090b;
 }
@@ -6561,10 +6557,7 @@
     -fx-background-color: transparent;
 }
 
-.dialog-pane .button {
-    -fx-background-color: #f97316;
-    -fx-text-fill: white;
-    -fx-padding: 8px 12px 8px 12px;
-    -fx-border-radius: 8px;
-    -fx-cursor: hand;
+.dialog-cancel-button:hover {
+    -fx-background-color: #e4e4e7;
+    -fx-border-color: #d4d4d8;
 }

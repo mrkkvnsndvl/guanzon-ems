@@ -12,7 +12,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="986.0" prefWidth="1656.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonemployeemanagementsystem.controller.EmployeeController">
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="986.0" prefWidth="1656.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonemployeemanagementsystem.controller.DepartmentController">
     <stylesheets>
         <URL value="@/com/project/guanzonemployeemanagementsystem/css/styles.css" />
     </stylesheets>
@@ -30,7 +30,7 @@
                         </Text>
                         <HBox styleClass="spacing-3">
                             <children>
-                                <Button mnemonicParsing="false" onAction="#handleRefresh" text="Refresh">
+                                <Button mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh">
                                     <styleClass>
                                         <String fx:value="text-base" />
                                         <String fx:value="bg-transparent" />
@@ -40,7 +40,7 @@
                                         <String fx:value="bg-rounded-lg" />
                                     </styleClass>
                                 </Button>
-                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#handleAddEmployee" text="Add department">
+                                <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#addDepartmentOnAction" text="Add department">
                                     <styleClass>
                                         <String fx:value="text-base" />
                                         <String fx:value="bg-orange-500" />
@@ -59,7 +59,7 @@
                 </HBox>
                 <HBox>
                     <children>
-                        <TextField onAction="#handleSearchEmployee" promptText="Search department...">
+                        <TextField fx:id="searchDepartmentTextField" onAction="#searchDepartmentOnAction" promptText="Search department...">
                             <styleClass>
                                 <String fx:value="bg-transparent" />
                                 <String fx:value="border" />
@@ -78,10 +78,10 @@
                 </HBox>
                 <VBox prefWidth="1656.0" styleClass="px-6">
                     <children>
-                        <TableView prefHeight="626.0" prefWidth="1608.0">
+                        <TableView fx:id="departmentTableView" prefHeight="626.0" prefWidth="1608.0">
                             <columns>
-                                <TableColumn prefWidth="75.0" styleClass="bg-transparent" text="Id" />
-                                <TableColumn prefWidth="215.0" styleClass="bg-transparent" text="Department" />
+                                <TableColumn fx:id="idTableColumn" prefWidth="75.0" styleClass="bg-transparent" text="Id" />
+                                <TableColumn fx:id="departmentTableColumn" prefWidth="215.0" styleClass="bg-transparent" text="Department" />
                             </columns>
                             <styleClass>
                                 <String fx:value="border-zinc-200" />
@@ -94,7 +94,7 @@
                 </VBox>
                 <HBox>
                     <children>
-                        <Button layoutX="1566.0" layoutY="34.0" mnemonicParsing="false" onAction="#handleDeleteEmployee" text="Delete">
+                        <Button layoutX="1566.0" layoutY="34.0" mnemonicParsing="false" onAction="#deleteDepartmentOnAction" text="Delete department">
                             <styleClass>
                                 <String fx:value="bg-transparent" />
                                 <String fx:value="text-fill-zinc-950" />
@@ -104,7 +104,7 @@
                         <String fx:value="delete-button" />
                             </styleClass>
                         </Button>
-                        <Button mnemonicParsing="false" onAction="#handleUpdateEmployee" text="Update">
+                        <Button mnemonicParsing="false" onAction="#updateDepartmentOnAction" text="Update department">
                             <styleClass>
                                 <String fx:value="bg-orange-500" />
                                 <String fx:value="text-fill-zinc-50" />
