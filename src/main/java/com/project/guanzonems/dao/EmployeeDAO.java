@@ -5,7 +5,9 @@ import com.project.guanzonems.utilities.DatabaseConnection;
 
 import java.sql.*;
 import java.util.ArrayList;
+import java.util.HashMap;
 import java.util.List;
+import java.util.Map;
 
 public class EmployeeDAO {
 
@@ -106,5 +108,18 @@ public class EmployeeDAO {
             }
         }
         return positions;
+    }
+
+    public Map<String, Integer> getEmployeeCountsByDepartment() throws SQLException {
+        Map<String, Integer> departmentCounts = new HashMap<>();
+        String sql = "SELECT sDprtment, COUNT(*) AS employeeCount FROM employees GROUP BY sDprtment";
+        try (Connection conn = DatabaseConnection.getConnection(); Statement stmt = conn.createStatement(); ResultSet rs = stmt.executeQuery(sql)) {
+            while (rs.next()) {
+                String department = rs.getString("sDprtment");
+                int count = rs.getInt("employeeCount");
+                departmentCounts.put(department, count);
+            }
+        }
+        return departmentCounts;
     }
 }

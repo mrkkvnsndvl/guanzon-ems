@@ -270,7 +270,6 @@ public class EmployeeDialogController {
     }
 
     private void clearValidationMessagesAndStyles() {
-        // Clear all validation messages
         lsFullNameValidatorText.setText("");
         lnAgeValidatorText.setText("");
         lsEmailValidatorText.setText("");

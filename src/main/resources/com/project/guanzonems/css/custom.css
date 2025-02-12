@@ -68,3 +68,22 @@
 .arrow-button {
     -fx-background-color: transparent;
 }
+
+.chart-plot-background {
+    -fx-background-color: #fafafa;
+}
+.default-color0.chart-bar {
+    -fx-bar-fill: #f97316;
+}
+.axis {
+    -fx-tick-label-fill: #09090b;
+    -fx-font-size: 12px;
+}
+.axis-label {
+    -fx-font-size: 14px;
+    -fx-fill: #09090b;
+}
+.chart-vertical-grid-lines, .chart-horizontal-grid-lines {
+    -fx-stroke: #e4e4e7;
+    -fx-stroke-width: 1px;
+}

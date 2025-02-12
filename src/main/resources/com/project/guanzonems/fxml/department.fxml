@@ -79,7 +79,7 @@
                         <TableView fx:id="departmentTableView" prefHeight="626.0" prefWidth="1608.0">
                             <columns>
                                 <TableColumn fx:id="idTableColumn" prefWidth="75.0" styleClass="bg-transparent" text="Id" />
-                                <TableColumn fx:id="departmentTableColumn" prefWidth="315.0" styleClass="bg-transparent" text="Department" />
+                                <TableColumn fx:id="departmentTableColumn" prefWidth="1529.0" styleClass="bg-transparent" text="Department" />
                             </columns>
                             <styleClass>
                                 <String fx:value="border-zinc-200" />
