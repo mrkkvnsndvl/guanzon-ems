@@ -6,12 +6,9 @@ import com.project.guanzonems.validator.DepartmentValidator;
 import com.fasterxml.jackson.databind.node.ObjectNode;
 import com.project.guanzonems.controller.DepartmentController;
 import com.project.guanzonems.utilities.SonnerUtility;
-import java.net.URL;
 import java.sql.SQLException;
-import java.util.ResourceBundle;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
-import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
@@ -44,6 +41,8 @@ public class DepartmentDialogController {
     @FXML
     private void createDepartmentButtonOnAction(ActionEvent event) {
         ObjectNode validationErrors = validateDepartmentFields();
+
+        clearValidationMessagesAndStyles();
 
         if (validationErrors.isEmpty()) {
             try {
@@ -110,12 +109,28 @@ public class DepartmentDialogController {
     }
 
     private void displayValidationErrors(ObjectNode validationErrors) {
-        lsDepartmentValidatorText.setText(validationErrors.path("departmentName").asText(""));
+        resetFieldStyles();
+
+        if (!validationErrors.path("departmentName").asText("").isEmpty()) {
+            lsDepartmentTextField.setStyle("-fx-border-color: #ef4444;");
+            lsDepartmentValidatorText.setText(validationErrors.path("departmentName").asText(""));
+        } else {
+            lsDepartmentValidatorText.setText("");
+        }
+    }
+
+    private void resetFieldStyles() {
+        lsDepartmentTextField.setStyle("");
+    }
+
+    private void clearValidationMessagesAndStyles() {
+        lsDepartmentValidatorText.setText("");
+
+        resetFieldStyles();
     }
 
     private void clearFieldsAndValidationMessages() {
         lsDepartmentTextField.clear();
-        lsDepartmentValidatorText.setText("");
+        clearValidationMessagesAndStyles();
     }
-
 }

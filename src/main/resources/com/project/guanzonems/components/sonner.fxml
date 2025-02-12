@@ -33,5 +33,6 @@
    <styleClass>
       <String fx:value="border" />
       <String fx:value="border-zinc-200" />
+      <String fx:value="bg-zinc-50" />
    </styleClass>
 </AnchorPane>

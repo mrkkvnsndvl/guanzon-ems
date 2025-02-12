@@ -17,14 +17,13 @@ import javafx.scene.control.DatePicker;
 import javafx.scene.control.TextField;
 import javafx.scene.layout.AnchorPane;
 import javafx.scene.text.Text;
-
-import java.sql.SQLException;
-import java.time.LocalDate;
 import javafx.scene.control.Button;
 import javafx.stage.Stage;
 
-public class EmployeeDialogController {
+import java.sql.SQLException;
+import java.time.LocalDate;
 
+public class EmployeeDialogController {
     @FXML
     private AnchorPane employeeDialogAnchorPane;
     @FXML
@@ -84,6 +83,8 @@ public class EmployeeDialogController {
     private void createEmployeeButtonOnAction(ActionEvent event) {
         ObjectNode validationErrors = validateEmployeeFields();
 
+        clearValidationMessagesAndStyles();
+
         if (validationErrors.isEmpty()) {
             try {
                 if (selectedEmployee == null) {
@@ -127,14 +128,12 @@ public class EmployeeDialogController {
             lsPositionTextField.setText(selectedEmployee.getLsPosition());
             ldDateOfJoiningDatePicker.setValue(selectedEmployee.getLdDateOfJoining());
             ldSalaryTextField.setText(String.valueOf(selectedEmployee.getLdSalary()));
-
             for (Department department : lsDepartmentChoiceBox.getItems()) {
                 if (department.getLsDepartment().equals(selectedEmployee.getLsDepartment())) {
                     lsDepartmentChoiceBox.setValue(department);
                     break;
                 }
             }
-
             createEmployeeButton.setText("Update Employee");
         }
     }
@@ -172,9 +171,7 @@ public class EmployeeDialogController {
         Department department = lsDepartmentChoiceBox.getValue();
         LocalDate dateOfJoining = ldDateOfJoiningDatePicker.getValue();
         double salary = Double.parseDouble(ldSalaryTextField.getText());
-
         int lnId = 0;
-
         return new Employee(lnId, fullName, age, email, phoneNumber, position, department.getLsDepartment(), dateOfJoining, salary);
     }
 
@@ -187,9 +184,7 @@ public class EmployeeDialogController {
         Department department = lsDepartmentChoiceBox.getValue();
         LocalDate dateOfJoining = ldDateOfJoiningDatePicker.getValue();
         String salary = ldSalaryTextField.getText();
-
         Integer employeeId = selectedEmployee != null ? selectedEmployee.getLnId() : null;
-
         return employeeValidator.validateEmployee(
                 fullName,
                 age,
@@ -204,14 +199,88 @@ public class EmployeeDialogController {
     }
 
     private void displayValidationErrors(ObjectNode validationErrors) {
-        lsFullNameValidatorText.setText(validationErrors.path("lsFullNameValidatorText").asText(""));
-        lnAgeValidatorText.setText(validationErrors.path("lnAgeValidatorText").asText(""));
-        lsEmailValidatorText.setText(validationErrors.path("lsEmailValidatorText").asText(""));
-        lsPhoneNumberValidatorText.setText(validationErrors.path("lsPhoneNumberValidatorText").asText(""));
-        lsPositionValidatorText.setText(validationErrors.path("lsPositionValidatorText").asText(""));
-        lsDepartmentValidatorText.setText(validationErrors.path("lsDepartmentValidatorText").asText(""));
-        ldDateOfJoiningValidatorText.setText(validationErrors.path("ldDateOfJoiningValidatorText").asText(""));
-        ldSalaryValidatorText.setText(validationErrors.path("ldSalaryValidatorText").asText(""));
+        resetFieldStyles();
+
+        if (!validationErrors.path("lsFullNameValidatorText").asText("").isEmpty()) {
+            lsFullNameTextField.setStyle("-fx-border-color: #ef4444;");
+            lsFullNameValidatorText.setText(validationErrors.path("lsFullNameValidatorText").asText(""));
+        } else {
+            lsFullNameValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("lnAgeValidatorText").asText("").isEmpty()) {
+            lnAgeTextField.setStyle("-fx-border-color: #ef4444;");
+            lnAgeValidatorText.setText(validationErrors.path("lnAgeValidatorText").asText(""));
+        } else {
+            lnAgeValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("lsEmailValidatorText").asText("").isEmpty()) {
+            lsEmailTextField.setStyle("-fx-border-color: #ef4444;");
+            lsEmailValidatorText.setText(validationErrors.path("lsEmailValidatorText").asText(""));
+        } else {
+            lsEmailValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("lsPhoneNumberValidatorText").asText("").isEmpty()) {
+            lsPhoneNumberTextField.setStyle("-fx-border-color: #ef4444;");
+            lsPhoneNumberValidatorText.setText(validationErrors.path("lsPhoneNumberValidatorText").asText(""));
+        } else {
+            lsPhoneNumberValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("lsPositionValidatorText").asText("").isEmpty()) {
+            lsPositionTextField.setStyle("-fx-border-color: #ef4444;");
+            lsPositionValidatorText.setText(validationErrors.path("lsPositionValidatorText").asText(""));
+        } else {
+            lsPositionValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("lsDepartmentValidatorText").asText("").isEmpty()) {
+            lsDepartmentChoiceBox.setStyle("-fx-border-color: #ef4444;");
+            lsDepartmentValidatorText.setText(validationErrors.path("lsDepartmentValidatorText").asText(""));
+        } else {
+            lsDepartmentValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("ldDateOfJoiningValidatorText").asText("").isEmpty()) {
+            ldDateOfJoiningDatePicker.setStyle("-fx-border-color: #ef4444;");
+            ldDateOfJoiningValidatorText.setText(validationErrors.path("ldDateOfJoiningValidatorText").asText(""));
+        } else {
+            ldDateOfJoiningValidatorText.setText("");
+        }
+
+        if (!validationErrors.path("ldSalaryValidatorText").asText("").isEmpty()) {
+            ldSalaryTextField.setStyle("-fx-border-color: #ef4444;");
+            ldSalaryValidatorText.setText(validationErrors.path("ldSalaryValidatorText").asText(""));
+        } else {
+            ldSalaryValidatorText.setText("");
+        }
+    }
+
+    private void resetFieldStyles() {
+        lsFullNameTextField.setStyle("");
+        lnAgeTextField.setStyle("");
+        lsEmailTextField.setStyle("");
+        lsPhoneNumberTextField.setStyle("");
+        lsPositionTextField.setStyle("");
+        lsDepartmentChoiceBox.setStyle("");
+        ldDateOfJoiningDatePicker.setStyle("");
+        ldSalaryTextField.setStyle("");
+    }
+
+    private void clearValidationMessagesAndStyles() {
+        // Clear all validation messages
+        lsFullNameValidatorText.setText("");
+        lnAgeValidatorText.setText("");
+        lsEmailValidatorText.setText("");
+        lsPhoneNumberValidatorText.setText("");
+        lsPositionValidatorText.setText("");
+        lsDepartmentValidatorText.setText("");
+        ldDateOfJoiningValidatorText.setText("");
+        ldSalaryValidatorText.setText("");
+
+        resetFieldStyles();
     }
 
     private void clearFieldsAndValidationMessages() {
@@ -223,14 +292,6 @@ public class EmployeeDialogController {
         lsDepartmentChoiceBox.setValue(null);
         ldDateOfJoiningDatePicker.setValue(null);
         ldSalaryTextField.clear();
-
-        lsFullNameValidatorText.setText("");
-        lnAgeValidatorText.setText("");
-        lsEmailValidatorText.setText("");
-        lsPhoneNumberValidatorText.setText("");
-        lsPositionValidatorText.setText("");
-        lsDepartmentValidatorText.setText("");
-        ldDateOfJoiningValidatorText.setText("");
-        ldSalaryValidatorText.setText("");
+        clearValidationMessagesAndStyles();
     }
 }

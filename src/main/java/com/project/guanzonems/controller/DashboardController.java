@@ -4,6 +4,7 @@ import com.project.guanzonems.dao.DepartmentDAO;
 import com.project.guanzonems.dao.EmployeeDAO;
 import com.project.guanzonems.model.Employee;
 import com.project.guanzonems.model.Department;
+import com.project.guanzonems.utilities.AlertDialogUtility;
 import com.project.guanzonems.utilities.SceneSwitcherUtility;
 import java.io.IOException;
 import java.net.URL;
@@ -23,6 +24,7 @@ import javafx.scene.layout.BorderPane;
 import javafx.scene.text.Text;
 import javafx.scene.web.WebEngine;
 import javafx.scene.web.WebView;
+import javafx.stage.Stage;
 
 public class DashboardController implements Initializable {
 
@@ -94,8 +96,16 @@ public class DashboardController implements Initializable {
 
     @FXML
     private void signOutButtonOnAction(ActionEvent event) {
-        // Navigate back to the Sign-In screen
-        SceneSwitcherUtility.switchToSignIn(event);
+        Stage ownerStage = (Stage) signOutButton.getScene().getWindow();
+        AlertDialogUtility.show(
+                ownerStage,
+                "Confirm Sign Out",
+                "Are you sure you want to sign out?",
+                null,
+                () -> {
+                    SceneSwitcherUtility.switchToSignIn(event);
+                }
+        );
     }
 
     private void loadFXMLPage(String resourcePath, Button button) {

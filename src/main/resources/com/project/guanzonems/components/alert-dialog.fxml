@@ -40,8 +40,6 @@
                         <String fx:value="bg-transparent" />
                         <String fx:value="border" />
                         <String fx:value="border-zinc-200" />
-                        <String fx:value="rounded-lg" />
-                        <String fx:value="bg-rounded-lg" />
                         <String fx:value="cursor-pointer" />
                         <String fx:value="bg-border-hover-button" />
                      </styleClass>
@@ -54,8 +52,8 @@
                         <String fx:value="text-sm" />
                         <String fx:value="text-fill-zinc-50" />
                         <String fx:value="bg-orange-500" />
-                        <String fx:value="bg-rounded-lg" />
                         <String fx:value="cursor-pointer" />
+                        <String fx:value="bg-rounded-none" />
                      </styleClass>
                   </Button>
                </children>
@@ -74,6 +72,7 @@
    <styleClass>
       <String fx:value="border" />
       <String fx:value="border-zinc-200" />
+      <String fx:value="bg-zinc-50" />
    </styleClass>
    <stylesheets>
       <URL value="@../css/styles.css" />

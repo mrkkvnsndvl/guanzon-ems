@@ -66,7 +66,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                                  <padding>
                                     <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
@@ -88,7 +87,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                                  <padding>
                                     <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
@@ -110,7 +108,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                                  <padding>
                                     <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
@@ -132,7 +129,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                                  <padding>
                                     <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
@@ -154,7 +150,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                                  <padding>
                                     <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
@@ -176,7 +171,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                     <String fx:value="cursor-pointer" />
                                  </styleClass>
                                  <padding>
@@ -198,7 +192,6 @@
                                  <styleClass>
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                               </DatePicker>
                               <Text fx:id="ldDateOfJoiningValidatorText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="fill-red-500" />
@@ -217,7 +210,6 @@
                                     <String fx:value="bg-transparent" />
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="rounded-lg" />
                                  </styleClass>
                                  <padding>
                                     <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
@@ -238,9 +230,7 @@
                         <String fx:value="border-zinc-200" />
                         <String fx:value="bg-transparent" />
                         <String fx:value="text-sm" />
-                        <String fx:value="rounded-lg" />
                         <String fx:value="cursor-pointer" />
-                        <String fx:value="bg-rounded-lg" />
                         <String fx:value="bg-border-hover-button" />
                      </styleClass>
                      <padding>
@@ -252,7 +242,7 @@
                         <String fx:value="bg-orange-500" />
                         <String fx:value="text-sm" />
                         <String fx:value="text-fill-zinc-50" />
-                        <String fx:value="bg-rounded-lg" />
+                        <String fx:value="bg-rounded-none" />
                         <String fx:value="cursor-pointer" />
                      </styleClass>
                      <padding>
@@ -280,5 +270,6 @@
    <styleClass>
       <String fx:value="border" />
       <String fx:value="border-zinc-200" />
+      <String fx:value="bg-zinc-50" />
    </styleClass>
 </AnchorPane>
