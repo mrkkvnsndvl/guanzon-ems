@@ -105,9 +105,6 @@ public class DepartmentController implements Initializable {
     private void setupDepartmentTableColumns() {
         idTableColumn.setCellValueFactory(new PropertyValueFactory<>("lnId"));
         departmentTableColumn.setCellValueFactory(new PropertyValueFactory<>("lsDepartment"));
-        
-        idTableColumn.setSortable(true);
-        departmentTableColumn.setSortable(true);
     }
 
     public void loadDepartmentsToTableView() {
