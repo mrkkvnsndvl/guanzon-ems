@@ -1,0 +1,417 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.web.WebView?>
+
+<BorderPane fx:id="dashboardBorderPane" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.DashboardController">
+    <top>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+                <HBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                    <children>
+                        <ImageView fitHeight="44.0" fitWidth="44.0" pickOnBounds="true" preserveRatio="true">
+                            <image>
+                                <Image url="@../images/guanzon-logo.png" />
+                            </image>
+                        </ImageView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Management System">
+                            <styleClass>
+                                <String fx:value="text-lg" />
+                                <String fx:value="fill-zinc-950" />
+                            </styleClass>
+                        </Text>
+                    </children>
+                    <styleClass>
+                        <String fx:value="align-center-left" />
+                        <String fx:value="spacing-3" />
+                        <String fx:value="border" />
+                        <String fx:value="border-zinc-200" />
+                    </styleClass>
+               <padding>
+                  <Insets bottom="12.0" left="24.0" right="24.0" top="12.0" />
+               </padding>
+                </HBox>
+            </children>
+        </AnchorPane>
+    </top>
+    <left>
+        <AnchorPane BorderPane.alignment="CENTER">
+            <children>
+            <ScrollPane hbarPolicy="NEVER" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                      <VBox spacing="376.0">
+                          <children>
+                        <VBox>
+                           <children>
+                                    <VBox>
+                                        <children>
+                                            <Button fx:id="dashboardButton" graphicTextGap="8.0" mnemonicParsing="false" onAction="#dashboardButtonOnAction" prefWidth="214.0" text="Dashboard">
+                                                <padding>
+                                                    <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                </padding>
+                                                <styleClass>
+                                                    <String fx:value="bg-transparent" />
+                                                    <String fx:value="cursor-pointer" />
+                                                    <String fx:value="text-base" />
+                                                    <String fx:value="align-top-left" />
+                                                    <String fx:value="text-fill-zinc-950" />
+                                          <String fx:value="bg-rounded-none" />
+                                                </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/dashboard-zinc-950.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                            </Button>
+                                            <Button fx:id="employeeButton" graphicTextGap="8.0" layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefWidth="214.0" text="Employees">
+                                                <padding>
+                                                    <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                </padding>
+                                                <styleClass>
+                                                    <String fx:value="bg-transparent" />
+                                                    <String fx:value="cursor-pointer" />
+                                                    <String fx:value="text-base" />
+                                                    <String fx:value="align-top-left" />
+                                                    <String fx:value="text-fill-zinc-950" />
+                                          <String fx:value="bg-rounded-none" />
+                                                </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/employees-zinc-950.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                            </Button>
+                                            <Button fx:id="departmentButton" graphicTextGap="8.0" layoutX="10.0" layoutY="63.0" mnemonicParsing="false" onAction="#departmentButtonOnAction" prefWidth="214.0" text="Departments">
+                                                <padding>
+                                                    <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                </padding>
+                                                <styleClass>
+                                                    <String fx:value="bg-transparent" />
+                                                    <String fx:value="cursor-pointer" />
+                                                    <String fx:value="text-base" />
+                                                    <String fx:value="align-top-left" />
+                                                    <String fx:value="text-fill-zinc-950" />
+                                          <String fx:value="bg-rounded-none" />
+                                                </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/departments-zinc-950.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                            </Button>
+                                    <Button fx:id="reportsButton" graphicTextGap="8.0" layoutX="10.0" layoutY="116.0" mnemonicParsing="false" onAction="#reportsButtonOnAction" prefWidth="214.0" text="Reports">
+                                       <padding>
+                                          <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="bg-transparent" />
+                                          <String fx:value="cursor-pointer" />
+                                          <String fx:value="text-base" />
+                                          <String fx:value="align-top-left" />
+                                          <String fx:value="text-fill-zinc-950" />
+                                          <String fx:value="bg-rounded-none" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/reports-zinc-950.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                        </children>
+                                 <styleClass>
+                                    <String fx:value="spacing-3" />
+                                    <String fx:value="p-6" />
+                                    <String fx:value="-rotate-0" />
+                                 </styleClass>
+                                    </VBox>
+                              <VBox>
+                                 <children>
+                                    <Line endX="100.0" startX="-161.0" styleClass="stroke-zinc-200" />
+                                    <VBox>
+                                       <children>
+                                          <Button fx:id="attendanceButton" graphicTextGap="8.0" mnemonicParsing="false" onAction="#attendanceButtonOnAction" prefWidth="214.0" text="Attendance">
+                                             <padding>
+                                                <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                             </padding>
+                                             <styleClass>
+                                                <String fx:value="bg-transparent" />
+                                                <String fx:value="cursor-pointer" />
+                                                <String fx:value="text-base" />
+                                                <String fx:value="align-top-left" />
+                                                <String fx:value="text-fill-zinc-950" />
+                                                <String fx:value="bg-rounded-none" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/daily-attendance-zinc-950.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="employeeButton1" graphicTextGap="8.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefWidth="214.0" text="Manage Payroll">
+                                             <padding>
+                                                <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                             </padding>
+                                             <styleClass>
+                                                <String fx:value="bg-transparent" />
+                                                <String fx:value="cursor-pointer" />
+                                                <String fx:value="text-base" />
+                                                <String fx:value="align-top-left" />
+                                                <String fx:value="text-fill-zinc-950" />
+                                                <String fx:value="bg-rounded-none" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/manage-payroll-zinc-950.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                          <Button fx:id="dashboardButton1" graphicTextGap="8.0" mnemonicParsing="false" onAction="#dashboardButtonOnAction" prefWidth="214.0" text="Leave Request">
+                                             <padding>
+                                                <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                             </padding>
+                                             <styleClass>
+                                                <String fx:value="bg-transparent" />
+                                                <String fx:value="cursor-pointer" />
+                                                <String fx:value="text-base" />
+                                                <String fx:value="align-top-left" />
+                                                <String fx:value="text-fill-zinc-950" />
+                                                <String fx:value="bg-rounded-none" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/leave-request-zinc-950.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="p-6" />
+                                          <String fx:value="spacing-3" />
+                                       </styleClass>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="258.0">
+                                 <children>
+                                    <Line endX="100.0" startX="-161.0" styleClass="stroke-zinc-200" />
+                                    <VBox>
+                                       <styleClass>
+                                          <String fx:value="p-6" />
+                                          <String fx:value="spacing-3" />
+                                       </styleClass>
+                                       <children>
+                                          <Button fx:id="departmentButton111" graphicTextGap="8.0" mnemonicParsing="false" onAction="#departmentButtonOnAction" text="Notifications">
+                                             <padding>
+                                                <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                             </padding>
+                                             <styleClass>
+                                                <String fx:value="bg-transparent" />
+                                                <String fx:value="cursor-pointer" />
+                                                <String fx:value="text-base" />
+                                                <String fx:value="align-top-left" />
+                                                <String fx:value="text-fill-zinc-950" />
+                                                <String fx:value="bg-rounded-none" />
+                                             </styleClass>
+                                             <graphic>
+                                                <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                                   <image>
+                                                      <Image url="@../images/notifications-zinc-950.png" />
+                                                   </image>
+                                                </ImageView>
+                                             </graphic>
+                                          </Button>
+                                       </children>
+                                    </VBox>
+                                 </children>
+                              </VBox>
+                           </children>
+                        </VBox>
+                              <VBox>
+                                  <children>
+                                      <Line endX="100.0" startX="-161.0" styleClass="stroke-zinc-200" />
+                              <VBox styleClass="p-6">
+                                 <children>
+                                            <Button fx:id="signOutButton" graphicTextGap="8.0" mnemonicParsing="false" onAction="#signOutButtonOnAction" prefWidth="214.0" text="Sign Out">
+                                                <padding>
+                                                    <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                </padding>
+                                                <styleClass>
+                                                    <String fx:value="bg-transparent" />
+                                                    <String fx:value="cursor-pointer" />
+                                                    <String fx:value="text-base" />
+                                                    <String fx:value="align-top-left" />
+                                                    <String fx:value="text-fill-zinc-950" />
+                                          <String fx:value="bg-rounded-none" />
+                                                </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/sign-out-zinc-950.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                            </Button>
+                                 </children>
+                              </VBox>
+                                  </children>
+                              </VBox>
+                          </children>
+                          <styleClass>
+                              <String fx:value="border" />
+                              <String fx:value="border-zinc-200" />
+                          </styleClass>
+                      </VBox>
+               </content>
+            </ScrollPane>
+            </children>
+        </AnchorPane>
+    </left>
+    <center>
+        <AnchorPane fx:id="dashboardAnchorPane" BorderPane.alignment="CENTER">
+            <children>
+            <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+               <content>
+                      <GridPane hgap="24.0" prefWidth="1085.0" styleClass="p-6" vgap="24.0">
+                          <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                        <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                          <children>
+                              <VBox>
+                                  <children>
+                                      <HBox>
+                                          <children>
+                                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                  <image>
+                                                      <Image url="@../images/employees-zinc-50.png" />
+                                                  </image>
+                                              </ImageView>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
+                                                  <styleClass>
+                                                      <String fx:value="text-base" />
+                                                      <String fx:value="fill-zinc-50" />
+                                                  </styleClass>
+                                              </Text>
+                                          </children>
+                                          <styleClass>
+                                              <String fx:value="align-center-left" />
+                                              <String fx:value="spacing-3" />
+                                          </styleClass>
+                                      </HBox>
+                                      <Text fx:id="employeesText" strokeType="OUTSIDE" strokeWidth="0.0">
+                                          <styleClass>
+                                              <String fx:value="text-4xl" />
+                                              <String fx:value="fill-zinc-50" />
+                                    <String fx:value="font-bold" />
+                                          </styleClass>
+                                      </Text>
+                                  </children>
+                                  <styleClass>
+                                      <String fx:value="p-6" />
+                                      <String fx:value="border" />
+                                      <String fx:value="border-orange-500" />
+                                      <String fx:value="spacing-6" />
+                                      <String fx:value="cursor-pointer" />
+                                      <String fx:value="bg-orange-500" />
+                                      <String fx:value="card-hover" />
+                                  </styleClass>
+                              </VBox>
+                              <VBox layoutX="34.0" layoutY="34.0" GridPane.columnIndex="1">
+                                  <children>
+                                      <HBox>
+                                          <children>
+                                              <ImageView fitHeight="24.0" fitWidth="24.0" pickOnBounds="true" preserveRatio="true">
+                                                  <image>
+                                                      <Image url="@../images/departments-zinc-50.png" />
+                                                  </image>
+                                              </ImageView>
+                                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departments">
+                                                  <styleClass>
+                                                      <String fx:value="text-base" />
+                                                      <String fx:value="fill-zinc-50" />
+                                                  </styleClass>
+                                              </Text>
+                                          </children>
+                                          <styleClass>
+                                              <String fx:value="align-center-left" />
+                                              <String fx:value="spacing-3" />
+                                          </styleClass>
+                                      </HBox>
+                                      <Text fx:id="departmentsText" strokeType="OUTSIDE" strokeWidth="0.0">
+                                          <styleClass>
+                                              <String fx:value="text-4xl" />
+                                              <String fx:value="font-bold" />
+                                              <String fx:value="fill-zinc-50" />
+                                          </styleClass>
+                                      </Text>
+                                  </children>
+                                  <styleClass>
+                                      <String fx:value="p-6" />
+                                      <String fx:value="border" />
+                                      <String fx:value="border-orange-500" />
+                                      <String fx:value="spacing-6" />
+                                      <String fx:value="cursor-pointer" />
+                                      <String fx:value="bg-orange-500" />
+                              <String fx:value="card-hover" />
+                                  </styleClass>
+                              </VBox>
+                        <VBox GridPane.columnSpan="2" GridPane.rowIndex="1">
+                           <children>
+                              <WebView fx:id="guanzonWebsiteWebView" prefHeight="733.0" prefWidth="200.0" />
+                           </children>
+                           <styleClass>
+                              <String fx:value="p-6" />
+                              <String fx:value="border" />
+                              <String fx:value="border-zinc-200" />
+                              <String fx:value="cursor-pointer" />
+                           </styleClass>
+                           <GridPane.margin>
+                              <Insets />
+                           </GridPane.margin>
+                        </VBox>
+                          </children>
+                      </GridPane>
+               </content>
+            </ScrollPane>
+            </children>
+        </AnchorPane>
+    </center>
+   <stylesheets>
+      <URL value="@../css/Globals.css" />
+      <URL value="@../css/PseudoClasses.css" />
+      <URL value="@../css/Custom.css" />
+   </stylesheets>
+</BorderPane>

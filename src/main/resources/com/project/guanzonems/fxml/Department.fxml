@@ -1,0 +1,144 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="departmentAnchorPane" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.DepartmentController">
+    <children>
+      <ScrollPane maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+              <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="spacing-6">
+                  <children>
+                      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" spacing="465.0">
+                          <children>
+                        <VBox styleClass="spacing-1">
+                           <children>
+                                    <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Departments">
+                                        <styleClass>
+                                            <String fx:value="text-lg" />
+                                            <String fx:value="font-bold" />
+                                            <String fx:value="fill-zinc-950" />
+                                        </styleClass>
+                                    </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Create, update, or remove department with ease.">
+                                 <styleClass>
+                                    <String fx:value="text-base" />
+                                    <String fx:value="fill-zinc-500" />
+                                 </styleClass>
+                              </Text>
+                           </children>
+                        </VBox>
+                              <HBox styleClass="spacing-3">
+                                  <children>
+                                      <Button mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh">
+                                          <styleClass>
+                                              <String fx:value="text-base" />
+                                              <String fx:value="bg-transparent" />
+                                              <String fx:value="text-fill-zinc-950" />
+                                              <String fx:value="cursor-pointer" />
+                                              <String fx:value="bg-hover-button" />
+                                    <String fx:value="p-2" />
+                                    <String fx:value="bg-rounded-none" />
+                                          </styleClass>
+                                      </Button>
+                                      <Button layoutX="10.0" layoutY="10.0" mnemonicParsing="false" onAction="#createDepartmentButtonOnAction" text="Create Department">
+                                          <styleClass>
+                                              <String fx:value="text-base" />
+                                              <String fx:value="bg-orange-500" />
+                                              <String fx:value="text-fill-zinc-50" />
+                                              <String fx:value="cursor-pointer" />
+                                              <String fx:value="bg-rounded-none" />
+                                    <String fx:value="p-2" />
+                                          </styleClass>
+                                      </Button>
+                                  </children>
+                              </HBox>
+                          </children>
+                          <styleClass>
+                              <String fx:value="p-6" />
+                              <String fx:value="align-center" />
+                          </styleClass>
+                      </HBox>
+                      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                          <children>
+                              <TextField fx:id="searchDepartmentTextField" onAction="#searchDepartmentOnAction" promptText="Search department...">
+                                  <styleClass>
+                                      <String fx:value="bg-transparent" />
+                                      <String fx:value="border" />
+                                      <String fx:value="border-zinc-200" />
+                                  </styleClass>
+                                  <padding>
+                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                  </padding>
+                              </TextField>
+                          </children>
+                          <styleClass>
+                              <String fx:value="align-center-right" />
+                              <String fx:value="px-6" />
+                          </styleClass>
+                      </HBox>
+                      <VBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" styleClass="px-6">
+                          <children>
+                              <TableView fx:id="departmentTableView" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                                  <columns>
+                                      <TableColumn fx:id="idTableColumn" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="114.0" styleClass="bg-transparent" text="Id" />
+                                      <TableColumn fx:id="departmentTableColumn" maxWidth="1.7976931348623157E308" minWidth="-Infinity" prefWidth="114.0" styleClass="bg-transparent" text="Department" />
+                                  </columns>
+                                  <styleClass>
+                                      <String fx:value="border-zinc-200" />
+                                      <String fx:value="border" />
+                                  </styleClass>
+                              </TableView>
+                          </children>
+                      </VBox>
+                      <HBox maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308">
+                          <children>
+                              <Button layoutX="1566.0" layoutY="34.0" mnemonicParsing="false" onAction="#deleteDepartmentOnAction" text="Delete Department">
+                                  <styleClass>
+                                      <String fx:value="bg-transparent" />
+                                      <String fx:value="text-fill-zinc-950" />
+                                      <String fx:value="text-base" />
+                                      <String fx:value="cursor-pointer" />
+                                      <String fx:value="bg-hover-button" />
+                              <String fx:value="p-2" />
+                              <String fx:value="bg-rounded-none" />
+                                  </styleClass>
+                              </Button>
+                              <Button mnemonicParsing="false" onAction="#updateDepartmentOnAction" text="Update Department">
+                                  <styleClass>
+                                      <String fx:value="bg-orange-500" />
+                                      <String fx:value="text-fill-zinc-50" />
+                                      <String fx:value="text-base" />
+                                      <String fx:value="bg-rounded-none" />
+                                      <String fx:value="cursor-pointer" />
+                              <String fx:value="p-2" />
+                                  </styleClass>
+                              </Button>
+                          </children>
+                          <styleClass>
+                              <String fx:value="p-6" />
+                              <String fx:value="align-center-right" />
+                              <String fx:value="spacing-3" />
+                          </styleClass>
+                      </HBox>
+                  </children>
+              </VBox>
+         </content>
+      </ScrollPane>
+    </children>
+   <stylesheets>
+      <URL value="@../css/Globals.css" />
+      <URL value="@../css/PseudoClasses.css" />
+      <URL value="@../css/Custom.css" />
+   </stylesheets>
+</AnchorPane>

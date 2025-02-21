@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane fx:id="sonnerAnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="356.0" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.components_controller.SonnerController">
+   <children>
+      <VBox prefHeight="200.0" prefWidth="100.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Text fx:id="titleText" strokeType="OUTSIDE" strokeWidth="0.0">
+               <styleClass>
+                  <String fx:value="text-sm" />
+                  <String fx:value="fill-zinc-950" />
+                  <String fx:value="font-bold" />
+               </styleClass>
+            </Text>
+            <Text fx:id="subHeadingText" layoutX="26.0" layoutY="41.0" strokeType="OUTSIDE" strokeWidth="0.0">
+               <styleClass>
+                  <String fx:value="fill-zinc-950" />
+                  <String fx:value="text-xs" />
+               </styleClass>
+            </Text>
+         </children>
+         <styleClass>
+            <String fx:value="p-4" />
+            <String fx:value="spacing-0_5" />
+            <String fx:value="bg-zinc-50" />
+         </styleClass>
+      </VBox>
+   </children>
+   <styleClass>
+      <String fx:value="border" />
+      <String fx:value="border-zinc-200" />
+      <String fx:value="bg-zinc-50" />
+   </styleClass>
+   <stylesheets>
+      <URL value="@../css/Globals.css" />
+      <URL value="@../css/PseudoClasses.css" />
+      <URL value="@../css/Custom.css" />
+   </stylesheets>
+</AnchorPane>

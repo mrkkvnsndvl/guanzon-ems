@@ -1,0 +1,77 @@
+.button:hover {
+    -fx-opacity: 0.8;
+}
+
+.bg-hover-button:hover {
+    -fx-background-color: #e4e4e7;
+}
+
+.bg-border-hover-button:hover {
+    -fx-background-color: #e4e4e7;
+    -fx-border-color: #d4d4d8;
+}
+
+.card-hover:hover {
+    -fx-border-color: #09090b;
+}
+
+.choice-box:focused {
+    -fx-border-color: #f97316;
+}
+
+.text-field:focused {
+    -fx-border-color: #f97316;
+}
+
+.date-picker:focused {
+    -fx-border-color: #f97316;
+}
+
+.table-view:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+.table-row-cell:selected {
+    -fx-background-color: #f97316;
+    -fx-text-fill: #fafafa;
+}
+.scroll-bar .thumb:hover {
+    -fx-background-color: #c2410c;
+}
+.scroll-bar:horizontal .track {
+    -fx-background-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+.scroll-bar:horizontal .thumb {
+    -fx-background-color: #f97316;
+    -fx-background-insets: 2;
+    -fx-background-radius: 5px;
+}
+.scroll-bar:vertical .track {
+    -fx-background-color: #e0e0e0;
+    -fx-border-radius: 5px;
+    -fx-background-radius: 5px;
+}
+.scroll-bar:vertical .thumb {
+    -fx-background-color: #f97316;
+    -fx-background-insets: 2;
+    -fx-background-radius: 5px;
+}
+
+.scroll-pane:focused {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
+
+.tab:hover {
+    -fx-background-color: #f97316;
+}
+.tab:selected {
+    -fx-background-color: #f97316;
+    -fx-text-fill: #fafafa;
+}
+.tab-pane *.tab:selected .focus-indicator {
+    -fx-focus-color: transparent;
+    -fx-faint-focus-color: transparent;
+}
