@@ -87,3 +87,10 @@
     -fx-stroke: #e4e4e7;
     -fx-stroke-width: 1px;
 }
+
+.tab-pane {
+    -fx-background-color: #fafafa;
+}
+.tab-pane .tab-header-area .tab-header-background {
+    -fx-background-color: transparent;
+}

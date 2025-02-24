@@ -172,7 +172,7 @@
                                                 </ImageView>
                                              </graphic>
                                           </Button>
-                                          <Button fx:id="employeeButton1" graphicTextGap="8.0" mnemonicParsing="false" onAction="#employeeButtonOnAction" prefWidth="214.0" text="Manage Payroll">
+                                          <Button fx:id="managePayrollButton" graphicTextGap="8.0" mnemonicParsing="false" onAction="#managePayrollButtonOnAction" prefWidth="214.0" text="Manage Payroll">
                                              <padding>
                                                 <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                                              </padding>

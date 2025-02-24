@@ -43,6 +43,8 @@ public class DashboardController implements Initializable {
     @FXML
     private Button attendanceButton;
     @FXML
+    private Button managePayrollButton;
+    @FXML
     private Button signOutButton;
     @FXML
     private Text employeesText;
@@ -70,6 +72,7 @@ public class DashboardController implements Initializable {
         setHoverButton(departmentButton);
         setHoverButton(reportsButton);
         setHoverButton(attendanceButton);
+        setHoverButton(managePayrollButton);
         setHoverButton(signOutButton);
 
         if (guanzonWebsiteWebView != null) {
@@ -104,10 +107,15 @@ public class DashboardController implements Initializable {
     private void reportsButtonOnAction(ActionEvent event) {
         loadFXMLPage("/com/project/guanzonems/fxml/Reports.fxml", reportsButton);
     }
-    
+
     @FXML
     private void attendanceButtonOnAction(ActionEvent event) {
         loadFXMLPage("/com/project/guanzonems/fxml/Attendance.fxml", attendanceButton);
+    }
+
+    @FXML
+    private void managePayrollButtonOnAction(ActionEvent event) {
+        loadFXMLPage("/com/project/guanzonems/fxml/ManagePayroll.fxml", managePayrollButton);
     }
 
     @FXML

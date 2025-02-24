@@ -6,6 +6,8 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.ChoiceBox?>
 <?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
 <?import javafx.scene.control.Tab?>
 <?import javafx.scene.control.TabPane?>
 <?import javafx.scene.control.TextField?>
@@ -17,9 +19,9 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="646.0" prefWidth="576.0" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1">
+<AnchorPane styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.ManagePayrollController">
    <children>
-      <VBox prefHeight="646.0" prefWidth="685.0" styleClass="spacing-6" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
             <HBox styleClass="p-6">
                <children>
@@ -48,321 +50,670 @@
                      <content>
                         <VBox>
                            <children>
-                              <VBox>
-                                 <children>
-                                    <GridPane styleClass="vgap-4">
-                                      <columnConstraints>
-                                        <ColumnConstraints hgrow="SOMETIMES" />
-                                      </columnConstraints>
-                                      <rowConstraints>
-                                        <RowConstraints vgrow="SOMETIMES" />
-                                        <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                        <RowConstraints vgrow="SOMETIMES" />
-                                      </rowConstraints>
+                              <ScrollPane fitToHeight="true" fitToWidth="true">
+                                 <VBox.margin>
+                                    <Insets top="24.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox>
                                        <children>
-                                          <VBox styleClass="spacing-2">
+                                          <GridPane styleClass="vgap-4">
+                                            <columnConstraints>
+                                              <ColumnConstraints hgrow="SOMETIMES" />
+                                            </columnConstraints>
+                                            <rowConstraints>
+                                              <RowConstraints vgrow="SOMETIMES" />
+                                              <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                              <RowConstraints vgrow="SOMETIMES" />
+                                            </rowConstraints>
                                              <children>
-                                                <Label text="Employee Name">
-                                                   <styleClass>
-                                                      <String fx:value="text-sm" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Label>
-                                                <TextField fx:id="lsDepartmentTextField" prefHeight="35.0" prefWidth="231.0">
-                                                   <styleClass>
-                                                      <String fx:value="bg-transparent" />
-                                                      <String fx:value="border" />
-                                                      <String fx:value="border-zinc-200" />
-                                                   </styleClass>
-                                                   <padding>
-                                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                   </padding>
-                                                </TextField>
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="10.0" layoutY="10.0" styleClass="spacing-2" GridPane.rowIndex="1">
-                                             <children>
-                                                <Label text="Position">
-                                                   <styleClass>
-                                                      <String fx:value="text-sm" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Label>
-                                                <TextField fx:id="lsDepartmentTextField1" prefHeight="35.0" prefWidth="231.0">
-                                                   <styleClass>
-                                                      <String fx:value="bg-transparent" />
-                                                      <String fx:value="border" />
-                                                      <String fx:value="border-zinc-200" />
-                                                   </styleClass>
-                                                   <padding>
-                                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                   </padding>
-                                                </TextField>
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="10.0" layoutY="89.0" styleClass="spacing-2" GridPane.rowIndex="2">
-                                             <children>
-                                                <Label text="Gross Salary">
-                                                   <styleClass>
-                                                      <String fx:value="text-sm" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Label>
-                                                <TextField fx:id="lsDepartmentTextField11" prefHeight="35.0" prefWidth="231.0">
-                                                   <styleClass>
-                                                      <String fx:value="bg-transparent" />
-                                                      <String fx:value="border" />
-                                                      <String fx:value="border-zinc-200" />
-                                                   </styleClass>
-                                                   <padding>
-                                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                   </padding>
-                                                </TextField>
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="10.0" layoutY="168.0" styleClass="spacing-2" GridPane.rowIndex="3">
-                                             <children>
-                                                <Label text="Pay Frequency">
-                                                   <styleClass>
-                                                      <String fx:value="text-sm" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Label>
-                                                <AnchorPane>
+                                                <VBox styleClass="spacing-2">
                                                    <children>
-                                                      <ChoiceBox fx:id="lsDepartmentChoiceBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <Label text="Employee Name">
+                                                         <styleClass>
+                                                            <String fx:value="text-sm" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Label>
+                                                      <TextField fx:id="employeeNameTextField" prefHeight="35.0" prefWidth="231.0">
                                                          <styleClass>
                                                             <String fx:value="bg-transparent" />
                                                             <String fx:value="border" />
                                                             <String fx:value="border-zinc-200" />
+                                                         </styleClass>
+                                                         <padding>
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="10.0" styleClass="spacing-2" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Label text="Position">
+                                                         <styleClass>
+                                                            <String fx:value="text-sm" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Label>
+                                                      <TextField fx:id="positionTextField" prefHeight="35.0" prefWidth="231.0">
+                                                         <styleClass>
+                                                            <String fx:value="bg-transparent" />
+                                                            <String fx:value="border" />
+                                                            <String fx:value="border-zinc-200" />
+                                                         </styleClass>
+                                                         <padding>
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="89.0" styleClass="spacing-2" GridPane.rowIndex="2">
+                                                   <children>
+                                                      <Label text="Gross Salary">
+                                                         <styleClass>
+                                                            <String fx:value="text-sm" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Label>
+                                                      <TextField fx:id="grossSalaryTextField" prefHeight="35.0" prefWidth="231.0">
+                                                         <styleClass>
+                                                            <String fx:value="bg-transparent" />
+                                                            <String fx:value="border" />
+                                                            <String fx:value="border-zinc-200" />
+                                                         </styleClass>
+                                                         <padding>
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                         </padding>
+                                                      </TextField>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="168.0" styleClass="spacing-2" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Label text="Pay Frequency">
+                                                         <styleClass>
+                                                            <String fx:value="text-sm" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Label>
+                                                      <AnchorPane>
+                                                         <children>
+                                                            <ChoiceBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                               <styleClass>
+                                                                  <String fx:value="bg-transparent" />
+                                                                  <String fx:value="border" />
+                                                                  <String fx:value="border-zinc-200" />
+                                                                  <String fx:value="cursor-pointer" />
+                                                               </styleClass>
+                                                               <padding>
+                                                                  <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                               </padding>
+                                                            </ChoiceBox>
+                                                         </children>
+                                                      </AnchorPane>
+                                                   </children>
+                                                </VBox>
+                                                <AnchorPane GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" text="Calculate Payroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <styleClass>
+                                                            <String fx:value="bg-orange-500" />
+                                                            <String fx:value="text-sm" />
+                                                            <String fx:value="text-fill-zinc-50" />
+                                                            <String fx:value="bg-rounded-none" />
                                                             <String fx:value="cursor-pointer" />
                                                          </styleClass>
                                                          <padding>
-                                                            <Insets bottom="4.0" left="4.0" right="4.0" top="4.0" />
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
                                                          </padding>
-                                                      </ChoiceBox>
+                                                      </Button>
                                                    </children>
                                                 </AnchorPane>
                                              </children>
-                                          </VBox>
-                                          <AnchorPane GridPane.rowIndex="4">
-                                             <children>
-                                                <Button fx:id="createEmployeeButton" mnemonicParsing="false" onAction="#createEmployeeButtonOnAction" text="Calculate Payroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
-                                                   <styleClass>
-                                                      <String fx:value="bg-orange-500" />
-                                                      <String fx:value="text-sm" />
-                                                      <String fx:value="text-fill-zinc-50" />
-                                                      <String fx:value="bg-rounded-none" />
-                                                      <String fx:value="cursor-pointer" />
-                                                   </styleClass>
-                                                   <padding>
-                                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                                   </padding>
-                                                </Button>
-                                             </children>
-                                          </AnchorPane>
+                                          </GridPane>
                                        </children>
-                                    </GridPane>
-                                 </children>
-                                 <styleClass>
-                                    <String fx:value="border" />
-                                    <String fx:value="border-zinc-200" />
-                                    <String fx:value="p-6" />
-                                 </styleClass>
-                                 <VBox.margin>
-                                    <Insets top="24.0" />
-                                 </VBox.margin>
-                              </VBox>
+                                       <styleClass>
+                                          <String fx:value="border" />
+                                          <String fx:value="border-zinc-200" />
+                                          <String fx:value="p-6" />
+                                       </styleClass>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
                            </children>
                         </VBox>
                      </content>
                      <styleClass>
                         <String fx:value="p-2" />
                         <String fx:value="cursor-pointer" />
+                        <String fx:value="bg-zinc-50" />
+                        <String fx:value="border" />
+                        <String fx:value="border-zinc-200" />
                      </styleClass>
                   </Tab>
                 <Tab text="Summary">
                      <styleClass>
                         <String fx:value="p-2" />
                         <String fx:value="cursor-pointer" />
+                        <String fx:value="bg-zinc-50" />
+                        <String fx:value="border" />
+                        <String fx:value="border-zinc-200" />
+                     </styleClass>
+                     <content>
+                        <VBox>
+                           <children>
+                              <ScrollPane fitToHeight="true" fitToWidth="true">
+                                 <VBox.margin>
+                                    <Insets top="24.0" />
+                                 </VBox.margin>
+                                 <content>
+                                    <VBox>
+                                       <children>
+                                          <GridPane styleClass="vgap-6">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints maxHeight="45.0" minHeight="0.0" prefHeight="0.0" vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                             </rowConstraints>
+                                             <children>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payroll Summary">
+                                                   <styleClass>
+                                                      <String fx:value="text-lg" />
+                                                      <String fx:value="font-bold" />
+                                                      <String fx:value="fill-zinc-950" />
+                                                   </styleClass>
+                                                </Text>
+                                                <VBox styleClass="spacing-0_5" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Details">
+                                                         <styleClass>
+                                                            <String fx:value="text-base" />
+                                                            <String fx:value="font-bold" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Text>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mark">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position:">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programmer">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox styleClass="spacing-0_5" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Information">
+                                                         <styleClass>
+                                                            <String fx:value="text-base" />
+                                                            <String fx:value="font-bold" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Text>
+                                                      <VBox>
+                                                         <children>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pay Frequency:">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gross Salary:">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱30000.00">
+                                                                     <styleClass>
+                                                                        <String fx:value="text-sm" />
+                                                                        <String fx:value="fill-zinc-500" />
+                                                                     </styleClass>
+                                                                  </Text>
+                                                               </children>
+                                                            </HBox>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Deductions" GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                                   <styleClass>
+                                                      <String fx:value="text-base" />
+                                                      <String fx:value="font-bold" />
+                                                      <String fx:value="fill-zinc-950" />
+                                                   </styleClass>
+                                                </Text>
+                                                <VBox layoutX="248.0" layoutY="50.0" styleClass="spacing-0_5" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <VBox styleClass="spacing-2">
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="SSS Contribution:">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="PhilHealth Contribution:">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Pag-IBIG Contribution:">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Withholding Tax:">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Total Deductions:">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                                  <String fx:value="font-bold" />
+                                                               </styleClass>
+                                                            </Text>
+                                                         </children>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <VBox styleClass="spacing-0_5" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <VBox>
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱1125.00">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱450.00">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱100.00">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱1833.40">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="191.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱3508.40">
+                                                               <styleClass>
+                                                                  <String fx:value="text-sm" />
+                                                                  <String fx:value="fill-zinc-950" />
+                                                                  <String fx:value="font-bold" />
+                                                               </styleClass>
+                                                            </Text>
+                                                         </children>
+                                                         <styleClass>
+                                                            <String fx:value="spacing-2" />
+                                                            <String fx:value="align-center-right" />
+                                                         </styleClass>
+                                                      </VBox>
+                                                   </children>
+                                                </VBox>
+                                                <Separator prefWidth="200.0" GridPane.columnSpan="2" GridPane.rowIndex="4" />
+                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Net Salary:" GridPane.rowIndex="5">
+                                                   <styleClass>
+                                                      <String fx:value="text-base" />
+                                                      <String fx:value="font-bold" />
+                                                      <String fx:value="fill-zinc-950" />
+                                                   </styleClass>
+                                                </Text>
+                                                <VBox styleClass="align-center-right" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱26491.60">
+                                                         <styleClass>
+                                                            <String fx:value="text-base" />
+                                                            <String fx:value="font-bold" />
+                                                            <String fx:value="fill-zinc-950" />
+                                                         </styleClass>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                             </children>
+                                          </GridPane>
+                                       </children>
+                                       <styleClass>
+                                          <String fx:value="border" />
+                                          <String fx:value="border-zinc-200" />
+                                          <String fx:value="p-6" />
+                                       </styleClass>
+                                    </VBox>
+                                 </content>
+                              </ScrollPane>
+                           </children>
+                        </VBox>
+                     </content>
+                  </Tab>
+                  <Tab text="Payslip">
+                     <styleClass>
+                        <String fx:value="p-2" />
+                        <String fx:value="cursor-pointer" />
+                        <String fx:value="bg-zinc-50" />
+                        <String fx:value="border" />
+                        <String fx:value="border-zinc-200" />
                      </styleClass>
                      <content>
                         <VBox>
                            <children>
                               <VBox>
                                  <children>
-                                    <GridPane styleClass="vgap-4">
-                                       <columnConstraints>
-                                          <ColumnConstraints hgrow="SOMETIMES" />
-                                          <ColumnConstraints hgrow="SOMETIMES" />
-                                       </columnConstraints>
-                                       <rowConstraints>
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                          <RowConstraints vgrow="SOMETIMES" />
-                                       </rowConstraints>
-                                       <children>
-                                          <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Payroll Summary">
-                                             <styleClass>
-                                                <String fx:value="text-lg" />
-                                                <String fx:value="font-bold" />
-                                                <String fx:value="fill-zinc-950" />
-                                             </styleClass>
-                                          </Text>
-                                          <VBox styleClass="spacing-0_5" GridPane.rowIndex="1">
+                                    <ScrollPane fitToHeight="true" fitToWidth="true">
+                                       <content>
+                                          <GridPane styleClass="vgap-4">
+                                             <columnConstraints>
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                                <ColumnConstraints hgrow="SOMETIMES" />
+                                             </columnConstraints>
+                                             <rowConstraints>
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                                <RowConstraints vgrow="SOMETIMES" />
+                                             </rowConstraints>
                                              <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Details">
-                                                   <styleClass>
-                                                      <String fx:value="text-base" />
-                                                      <String fx:value="font-bold" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Text>
-                                                <VBox>
+                                                <VBox GridPane.columnSpan="3">
                                                    <children>
-                                                      <HBox styleClass="spacing-0_5">
+                                                      <VBox>
                                                          <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="PAYSLIP">
                                                                <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
+                                                                  <String fx:value="text-2xl" />
+                                                                  <String fx:value="font-bold" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mark">
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For the period ending 2/24/2025">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-500" />
                                                                </styleClass>
                                                             </Text>
                                                          </children>
-                                                      </HBox>
-                                                      <HBox styleClass="spacing-0_5">
-                                                         <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Position:">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programmer">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
-                                                         </children>
-                                                      </HBox>
+                                                         <styleClass>
+                                                            <String fx:value="align-center" />
+                                                            <String fx:value="p-6" />
+                                                         </styleClass>
+                                                      </VBox>
+                                                      <Separator prefWidth="200.0" />
                                                    </children>
                                                 </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox styleClass="spacing-0_5" GridPane.columnIndex="1" GridPane.rowIndex="1">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Salary Information">
-                                                   <styleClass>
-                                                      <String fx:value="text-base" />
-                                                      <String fx:value="font-bold" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Text>
-                                                <VBox>
+                                                <VBox GridPane.rowIndex="1">
                                                    <children>
-                                                      <HBox styleClass="spacing-0_5">
+                                                      <VBox styleClass="spacing-1">
                                                          <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pay Frequency">
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employee Information">
                                                                <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
+                                                                  <String fx:value="text-base" />
+                                                                  <String fx:value="font-bold" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Name:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Mark Kevin J Sandoval" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Position:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Programmer" />
+                                                               </children>
+                                                            </HBox>
+                                                            <HBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Pay Frequency:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Monthly" />
+                                                               </children>
+                                                            </HBox>
                                                          </children>
-                                                      </HBox>
-                                                      <HBox styleClass="spacing-0_5">
+                                                      </VBox>
+                                                      <VBox styleClass="spacing-1">
                                                          <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gross Salary">
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Deductions">
                                                                <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
+                                                                  <String fx:value="text-base" />
+                                                                  <String fx:value="font-bold" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱30000.00">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
+                                                            <VBox styleClass="spacing-0_5">
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="SSS:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="PhilHealth:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Pag-IBIG:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Withholding Tax:" />
+                                                               </children>
+                                                            </VBox>
                                                          </children>
-                                                      </HBox>
+                                                      </VBox>
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="p-6" />
+                                                      <String fx:value="spacing-4" />
+                                                   </styleClass>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="128.0" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Earnings">
+                                                         <styleClass>
+                                                            <String fx:value="text-base" />
+                                                            <String fx:value="font-bold" />
+                                                         </styleClass>
+                                                      </Text>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Basic Salary:" />
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="p-6" />
+                                                      <String fx:value="spacing-0_5" />
+                                                   </styleClass>
+                                                </VBox>
+                                                <VBox styleClass="p-6" GridPane.columnIndex="2" GridPane.rowIndex="1">
+                                                   <children>
+                                                      <VBox>
+                                                         <children>
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
+                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱30000.00" />
+                                                         </children>
+                                                         <styleClass>
+                                                            <String fx:value="spacing-1_5" />
+                                                            <String fx:value="align-top-right" />
+                                                         </styleClass>
+                                                      </VBox>
+                                                      <VBox styleClass="spacing-1">
+                                                         <children>
+                                                            <Text layoutX="10.0" layoutY="27.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                               <styleClass>
+                                                                  <String fx:value="text-base" />
+                                                                  <String fx:value="font-bold" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="53.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                               <styleClass>
+                                                                  <String fx:value="text-base" />
+                                                                  <String fx:value="font-bold" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <Text layoutX="10.0" layoutY="79.0" strokeType="OUTSIDE" strokeWidth="0.0">
+                                                               <styleClass>
+                                                                  <String fx:value="text-base" />
+                                                                  <String fx:value="font-bold" />
+                                                               </styleClass>
+                                                            </Text>
+                                                            <VBox>
+                                                               <children>
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱1125.00" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱450.00" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱100.00" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱1833.40" />
+                                                               </children>
+                                                               <styleClass>
+                                                                  <String fx:value="spacing-1_5" />
+                                                                  <String fx:value="align-top-right" />
+                                                               </styleClass>
+                                                            </VBox>
+                                                         </children>
+                                                      </VBox>
                                                    </children>
                                                 </VBox>
-                                             </children>
-                                          </VBox>
-                                          <VBox layoutX="304.0" layoutY="50.0" styleClass="spacing-0_5" GridPane.columnSpan="2" GridPane.rowIndex="2">
-                                             <children>
-                                                <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Deductions">
-                                                   <styleClass>
-                                                      <String fx:value="text-base" />
-                                                      <String fx:value="font-bold" />
-                                                      <String fx:value="fill-zinc-950" />
-                                                   </styleClass>
-                                                </Text>
-                                                <VBox>
+                                                <VBox GridPane.columnSpan="3" GridPane.rowIndex="2">
                                                    <children>
-                                                      <HBox styleClass="spacing-0_5">
-                                                         <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Pay Frequency">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
-                                                         </children>
-                                                      </HBox>
-                                                      <HBox styleClass="spacing-0_5">
-                                                         <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Gross Salary">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱30000.00">
-                                                               <styleClass>
-                                                                  <String fx:value="text-sm" />
-                                                                  <String fx:value="fill-zinc-500" />
-                                                               </styleClass>
-                                                            </Text>
-                                                         </children>
-                                                      </HBox>
+                                                      <Separator />
                                                    </children>
                                                 </VBox>
+                                                <VBox styleClass="px-6" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Total Deductions:">
+                                                         <styleClass>
+                                                            <String fx:value="text-base" />
+                                                            <String fx:value="font-bold" />
+                                                         </styleClass>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="427.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱3508.40">
+                                                         <styleClass>
+                                                            <String fx:value="text-base" />
+                                                            <String fx:value="font-bold" />
+                                                         </styleClass>
+                                                      </Text>
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="px-6" />
+                                                      <String fx:value="align-center-right" />
+                                                   </styleClass>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="408.0" GridPane.columnSpan="3" GridPane.rowIndex="4">
+                                                   <children>
+                                                      <Separator />
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="427.0" styleClass="px-6" GridPane.rowIndex="5">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Net Pay:">
+                                                         <styleClass>
+                                                            <String fx:value="text-lg" />
+                                                            <String fx:value="font-bold" />
+                                                         </styleClass>
+                                                      </Text>
+                                                   </children>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="487.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
+                                                   <children>
+                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱26491.60">
+                                                         <styleClass>
+                                                            <String fx:value="text-lg" />
+                                                            <String fx:value="font-bold" />
+                                                         </styleClass>
+                                                      </Text>
+                                                   </children>
+                                                   <styleClass>
+                                                      <String fx:value="px-6" />
+                                                      <String fx:value="align-top-right" />
+                                                   </styleClass>
+                                                </VBox>
+                                                <VBox layoutX="10.0" layoutY="465.0" GridPane.columnSpan="3" GridPane.rowIndex="6">
+                                                   <children>
+                                                      <Separator />
+                                                   </children>
+                                                </VBox>
+                                                <AnchorPane GridPane.columnSpan="3" GridPane.rowIndex="7">
+                                                   <children>
+                                                      <Button mnemonicParsing="false" text="Print Slip" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                         <styleClass>
+                                                            <String fx:value="bg-orange-500" />
+                                                            <String fx:value="text-sm" />
+                                                            <String fx:value="text-fill-zinc-50" />
+                                                            <String fx:value="bg-rounded-none" />
+                                                            <String fx:value="cursor-pointer" />
+                                                         </styleClass>
+                                                         <padding>
+                                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                                         </padding>
+                                                      </Button>
+                                                   </children>
+                                                   <GridPane.margin>
+                                                      <Insets bottom="18.0" left="24.0" right="24.0" />
+                                                   </GridPane.margin>
+                                                </AnchorPane>
                                              </children>
-                                          </VBox>
-                                       </children>
-                                    </GridPane>
+                                          </GridPane>
+                                       </content>
+                                    </ScrollPane>
                                  </children>
                                  <styleClass>
                                     <String fx:value="border" />
                                     <String fx:value="border-zinc-200" />
-                                    <String fx:value="p-6" />
+                                    <String fx:value="-rotate-0" />
                                  </styleClass>
                                  <VBox.margin>
                                     <Insets top="24.0" />
@@ -371,15 +722,6 @@
                            </children>
                         </VBox>
                      </content>
-                  </Tab>
-                  <Tab text="Payslip">
-                     <content>
-                        <VBox />
-                     </content>
-                     <styleClass>
-                        <String fx:value="p-2" />
-                        <String fx:value="cursor-pointer" />
-                     </styleClass>
                   </Tab>
               </tabs>
             </TabPane>
