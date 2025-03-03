@@ -13,19 +13,30 @@
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="attendanceAnchorPane" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.AttendanceController">
    <children>
-      <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
             <VBox styleClass="spacing-6">
                <children>
                   <VBox>
                      <children>
-                        <HBox spacing="363.0">
+                        <GridPane styleClass="p-6">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints vgrow="SOMETIMES" />
+                              <RowConstraints vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
                               <VBox styleClass="spacing-1">
                                  <children>
@@ -44,7 +55,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <HBox>
+                              <HBox GridPane.columnIndex="1">
                                  <children>
                                     <Button mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh">
                                        <styleClass>
@@ -66,15 +77,11 @@
                                  </children>
                                  <styleClass>
                                     <String fx:value="spacing-3" />
-                                    <String fx:value="align-center" />
+                                    <String fx:value="align-center-right" />
                                  </styleClass>
                               </HBox>
                            </children>
-                           <styleClass>
-                              <String fx:value="p-6" />
-                              <String fx:value="align-center" />
-                           </styleClass>
-                        </HBox>
+                        </GridPane>
                         <VBox>
                            <children>
                               <TableView fx:id="dailyAttendanceTableView">
@@ -126,9 +133,17 @@
                               <String fx:value="align-center-left" />
                            </styleClass>
                         </HBox>
-                        <HBox layoutX="10.0" layoutY="10.0">
+                        <GridPane>
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                              <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <VBox prefWidth="331.0">
+                              <VBox prefWidth="289.0">
                                  <styleClass>
                                     <String fx:value="border" />
                                     <String fx:value="border-orange-500" />
@@ -145,7 +160,7 @@
                                           <String fx:value="fill-zinc-50" />
                                        </styleClass>
                                     </Text>
-                                    <Text fx:id="totalEmployeesText" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="2">
+                                    <Text fx:id="totalEmployeesText" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                        <styleClass>
                                           <String fx:value="text-2xl" />
                                           <String fx:value="font-bold" />
@@ -154,7 +169,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <VBox layoutX="34.0" layoutY="34.0" prefWidth="331.0">
+                              <VBox prefWidth="289.0" GridPane.columnIndex="1">
                                  <styleClass>
                                     <String fx:value="border" />
                                     <String fx:value="border-orange-500" />
@@ -171,7 +186,7 @@
                                           <String fx:value="fill-zinc-50" />
                                        </styleClass>
                                     </Text>
-                                    <Text fx:id="workingDaysText" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="23">
+                                    <Text fx:id="workingDaysText" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                        <styleClass>
                                           <String fx:value="text-2xl" />
                                           <String fx:value="font-bold" />
@@ -180,7 +195,7 @@
                                     </Text>
                                  </children>
                               </VBox>
-                              <VBox layoutX="598.0" layoutY="34.0" prefWidth="331.0">
+                              <VBox prefWidth="289.0" GridPane.columnIndex="2">
                                  <styleClass>
                                     <String fx:value="border" />
                                     <String fx:value="border-orange-500" />
@@ -197,7 +212,7 @@
                                           <String fx:value="fill-zinc-50" />
                                        </styleClass>
                                     </Text>
-                                    <Text fx:id="overallAttendancePercentageText" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0" text="89.5%">
+                                    <Text fx:id="overallAttendancePercentageText" layoutX="11.0" layoutY="24.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                        <styleClass>
                                           <String fx:value="text-2xl" />
                                           <String fx:value="font-bold" />
@@ -208,40 +223,52 @@
                               </VBox>
                            </children>
                            <styleClass>
+                              <String fx:value="hgap-6" />
                               <String fx:value="p-6" />
-                              <String fx:value="align-center-left" />
-                              <String fx:value="spacing-6" />
                            </styleClass>
-                        </HBox>
-                        <HBox layoutX="10.0" layoutY="104.0" spacing="393.0">
-                           <styleClass>
-                              <String fx:value="p-6" />
-                              <String fx:value="align-center" />
-                           </styleClass>
+                        </GridPane>
+                        <GridPane styleClass="px-6">
+                           <columnConstraints>
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                              <ColumnConstraints hgrow="SOMETIMES" />
+                           </columnConstraints>
+                           <rowConstraints>
+                              <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                           </rowConstraints>
                            <children>
-                              <HBox>
+                              <GridPane hgap="12.0">
+                                 <columnConstraints>
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                    <ColumnConstraints hgrow="SOMETIMES" />
+                                 </columnConstraints>
+                                 <rowConstraints>
+                                    <RowConstraints vgrow="SOMETIMES" />
+                                 </rowConstraints>
                                  <children>
-                                    <ChoiceBox fx:id="selectMonthChoiceBox" prefWidth="150.0">
-                                       <styleClass>
-                                          <String fx:value="bg-transparent" />
-                                          <String fx:value="border" />
-                                          <String fx:value="border-zinc-200" />
-                                       </styleClass>
-                                       <padding>
-                                          <Insets bottom="4.0" top="4.0" />
-                                       </padding>
-                                    </ChoiceBox>
-                                    <ChoiceBox fx:id="departmentsChoiceBox" prefWidth="150.0">
-                                       <styleClass>
-                                          <String fx:value="bg-transparent" />
-                                          <String fx:value="border" />
-                                          <String fx:value="border-zinc-200" />
-                                       </styleClass>
-                                       <padding>
-                                          <Insets bottom="4.0" top="4.0" />
-                                       </padding>
-                                    </ChoiceBox>
-                                    <TextField fx:id="searchEmployeeTextField" promptText="Search employee...">
+                                    <AnchorPane>
+                                       <children>
+                                          <ChoiceBox fx:id="selectMonthChoiceBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <styleClass>
+                                                <String fx:value="bg-transparent" />
+                                                <String fx:value="border" />
+                                                <String fx:value="border-zinc-200" />
+                                             </styleClass>
+                                          </ChoiceBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <AnchorPane GridPane.columnIndex="1">
+                                       <children>
+                                          <ChoiceBox fx:id="departmentsChoiceBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                             <styleClass>
+                                                <String fx:value="bg-transparent" />
+                                                <String fx:value="border" />
+                                                <String fx:value="border-zinc-200" />
+                                             </styleClass>
+                                          </ChoiceBox>
+                                       </children>
+                                    </AnchorPane>
+                                    <TextField fx:id="searchEmployeeTextField" promptText="Search employee..." GridPane.columnIndex="2">
                                        <styleClass>
                                           <String fx:value="bg-transparent" />
                                           <String fx:value="border" />
@@ -252,30 +279,29 @@
                                        </padding>
                                     </TextField>
                                  </children>
-                                 <styleClass>
-                                    <String fx:value="align-center-left" />
-                                    <String fx:value="spacing-6" />
-                                 </styleClass>
-                              </HBox>
-                              <Button graphicTextGap="8.0" mnemonicParsing="false" onAction="#exportToCsvButtonOnAction" text="Export to CSV">
-                                 <styleClass>
-                                    <String fx:value="text-base" />
-                                    <String fx:value="bg-orange-500" />
-                                    <String fx:value="text-fill-zinc-50" />
-                                    <String fx:value="cursor-pointer" />
-                                    <String fx:value="bg-rounded-none" />
-                                    <String fx:value="p-2" />
-                                 </styleClass>
-                                 <graphic>
-                                    <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
-                                       <image>
-                                          <Image url="@../images/export-to-csv-zinc-50.png" />
-                                       </image>
-                                    </ImageView>
-                                 </graphic>
-                              </Button>
+                              </GridPane>
+                              <VBox styleClass="align-center-right" GridPane.columnIndex="1">
+                                 <children>
+                                    <Button graphicTextGap="8.0" mnemonicParsing="false" onAction="#exportToCsvButtonOnAction" text="Export to CSV">
+                                       <styleClass>
+                                          <String fx:value="text-base" />
+                                          <String fx:value="bg-orange-500" />
+                                          <String fx:value="text-fill-zinc-50" />
+                                          <String fx:value="cursor-pointer" />
+                                          <String fx:value="bg-rounded-none" />
+                                       </styleClass>
+                                       <graphic>
+                                          <ImageView fitHeight="18.0" fitWidth="18.0" pickOnBounds="true" preserveRatio="true">
+                                             <image>
+                                                <Image url="@../images/export-to-csv-zinc-50.png" />
+                                             </image>
+                                          </ImageView>
+                                       </graphic>
+                                    </Button>
+                                 </children>
+                              </VBox>
                            </children>
-                        </HBox>
+                        </GridPane>
                         <VBox>
                            <children>
                               <TableView fx:id="monthlyAttendanceTableView">

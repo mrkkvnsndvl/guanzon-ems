@@ -64,9 +64,7 @@ public class DashboardController implements Initializable {
         if (dashboardBorderPane != null) {
             dashboardBorderPane.setCenter(dashboardAnchorPane);
         }
-
         setActiveButton(dashboardButton);
-
         setHoverButton(dashboardButton);
         setHoverButton(employeeButton);
         setHoverButton(departmentButton);
@@ -74,14 +72,11 @@ public class DashboardController implements Initializable {
         setHoverButton(attendanceButton);
         setHoverButton(managePayrollButton);
         setHoverButton(signOutButton);
-
         if (guanzonWebsiteWebView != null) {
             webEngine = guanzonWebsiteWebView.getEngine();
             loadGuanzonWebPage();
         }
-
         employeesCount();
-
         departmentsCount();
     }
 
@@ -150,11 +145,9 @@ public class DashboardController implements Initializable {
         if (button == null) {
             return;
         }
-
         if (activeButton != null) {
             activeButton.setStyle("-fx-background-color: transparent;");
         }
-
         activeButton = button;
         activeButton.setStyle("-fx-background-color: #e4e4e7;");
     }
@@ -163,16 +156,13 @@ public class DashboardController implements Initializable {
         if (button == null) {
             return;
         }
-
         String buttonOnHoverStyle = "-fx-background-color: #e4e4e7;";
         String buttonDefaultStyle = "-fx-background-color: transparent;";
-
         button.setOnMouseEntered(event -> {
             if (button != activeButton) {
                 button.setStyle(buttonOnHoverStyle);
             }
         });
-
         button.setOnMouseExited(event -> {
             if (button != activeButton) {
                 button.setStyle(buttonDefaultStyle);

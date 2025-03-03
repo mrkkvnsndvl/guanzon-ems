@@ -6,17 +6,15 @@ import com.fasterxml.jackson.databind.node.ObjectNode;
 import java.util.regex.Pattern;
 
 public class AdminValidator {
-    private static final String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
-    private static final int MIN_PASSWORD_LENGTH = 8; 
 
+    private static final String EMAIL_REGEX = "^[\\w-\\.]+@([\\w-]+\\.)+[\\w-]{2,4}$";
+    private static final int MIN_PASSWORD_LENGTH = 8;
     private final ObjectMapper objectMapper = new ObjectMapper();
-    
+
     public ObjectNode validateAdmin(String email, String password) {
         ObjectNode validationErrors = objectMapper.createObjectNode();
-
         validateEmail(email, validationErrors);
         validatePassword(password, validationErrors);
-
         return validationErrors;
     }
 

@@ -21,7 +21,6 @@ public class DepartmentDialogUtility {
             DepartmentDialogController controller = loader.getController();
             controller.setOwnerAnchorPane(ownerAnchorPane);
             controller.setDepartmentController(departmentController);
-
             Stage stage = new Stage();
             stage.initOwner(ownerAnchorPane.getScene().getWindow());
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -42,7 +41,6 @@ public class DepartmentDialogUtility {
             controller.setOwnerAnchorPane(ownerAnchorPane);
             controller.setSelectedDepartment(selectedDepartment);
             controller.setDepartmentController(departmentController);
-
             Stage stage = new Stage();
             stage.initOwner(ownerAnchorPane.getScene().getWindow());
             stage.initModality(Modality.APPLICATION_MODAL);

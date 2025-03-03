@@ -13,11 +13,9 @@ public class SonnerUtility {
         try {
             FXMLLoader loader = new FXMLLoader(SonnerUtility.class.getResource("/com/project/guanzonems/components/Sonner.fxml"));
             Parent root = loader.load();
-
             SonnerController controller = loader.getController();
             controller.setTitle(title);
             controller.setSubHeading(subHeading);
-
             controller.show(ownerWindow);
         } catch (IOException e) {
             e.printStackTrace();

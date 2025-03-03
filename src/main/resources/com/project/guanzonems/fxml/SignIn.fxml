@@ -6,6 +6,7 @@
 <?import javafx.scene.control.Button?>
 <?import javafx.scene.control.Label?>
 <?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.ScrollPane?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.image.Image?>
 <?import javafx.scene.image.ImageView?>
@@ -16,123 +17,144 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane prefHeight="768.0" prefWidth="1366.0" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.SignInController">
+<AnchorPane styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.SignInController">
    <children>
-      <VBox translateX="463.0" translateY="132.0">
-         <styleClass>
-            <String fx:value="border" />
-            <String fx:value="border-zinc-200" />
-            <String fx:value="p-6" />
-            <String fx:value="spacing-6" />
-         </styleClass>
-         <children>
-            <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
-               <image>
-                  <Image url="@../images/guanzon-logo.png" />
-               </image>
-            </ImageView>
-            <VBox styleClass="spacing-1">
+      <ScrollPane fitToHeight="true" fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <GridPane>
+               <columnConstraints>
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+                  <ColumnConstraints hgrow="SOMETIMES" />
+               </columnConstraints>
+               <rowConstraints>
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+                  <RowConstraints vgrow="SOMETIMES" />
+               </rowConstraints>
                <children>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in">
+                  <VBox GridPane.columnIndex="4" GridPane.rowIndex="1">
                      <styleClass>
-                        <String fx:value="text-3xl" />
-                        <String fx:value="font-bold" />
+                        <String fx:value="border" />
+                        <String fx:value="border-zinc-200" />
+                        <String fx:value="p-6" />
+                        <String fx:value="spacing-6" />
                      </styleClass>
-                  </Text>
-                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This section is exclusively for administrator access. Please enter your credentials to proceed." wrappingWidth="348.0">
-                     <styleClass>
-                        <String fx:value="text-base" />
-                        <String fx:value="fill-zinc-400" />
-                     </styleClass>
-                  </Text>
-               </children>
-            </VBox>
-            <GridPane hgap="4.0" vgap="4.0">
-              <columnConstraints>
-                <ColumnConstraints hgrow="SOMETIMES" />
-                <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
-              </columnConstraints>
-              <rowConstraints>
-                <RowConstraints vgrow="SOMETIMES" />
-                <RowConstraints vgrow="SOMETIMES" />
-                <RowConstraints vgrow="SOMETIMES" />
-              </rowConstraints>
-               <children>
-                  <VBox styleClass="spacing-1" GridPane.columnSpan="2">
                      <children>
-                        <Label text="Email">
-                           <styleClass>
-                              <String fx:value="text-base" />
-                              <String fx:value="fill-zinc-950" />
-                           </styleClass>
-                        </Label>
-                        <TextField fx:id="emailTextField">
-                           <styleClass>
-                              <String fx:value="bg-transparent" />
-                              <String fx:value="border" />
-                              <String fx:value="border-zinc-200" />
-                           </styleClass>
-                           <padding>
-                              <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                           </padding>
-                        </TextField>
-                        <Text fx:id="emailValidatorText" strokeType="OUTSIDE" strokeWidth="0.0">
-                           <styleClass>
-                              <String fx:value="text-xs" />
-                              <String fx:value="fill-red-500" />
-                           </styleClass>
-                        </Text>
+                        <ImageView fitHeight="72.0" fitWidth="72.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@../images/guanzon-logo.png" />
+                           </image>
+                        </ImageView>
+                        <VBox styleClass="spacing-1">
+                           <children>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sign in">
+                                 <styleClass>
+                                    <String fx:value="text-3xl" />
+                                    <String fx:value="font-bold" />
+                                 </styleClass>
+                              </Text>
+                              <Text strokeType="OUTSIDE" strokeWidth="0.0" text="This section is exclusively for administrator access. Please enter your credentials to proceed." wrappingWidth="348.0">
+                                 <styleClass>
+                                    <String fx:value="text-base" />
+                                    <String fx:value="fill-zinc-400" />
+                                 </styleClass>
+                              </Text>
+                           </children>
+                        </VBox>
+                        <GridPane hgap="4.0" vgap="4.0">
+                          <columnConstraints>
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                            <ColumnConstraints hgrow="SOMETIMES" />
+                          </columnConstraints>
+                          <rowConstraints>
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                            <RowConstraints vgrow="SOMETIMES" />
+                          </rowConstraints>
+                           <children>
+                              <VBox styleClass="spacing-1" GridPane.columnSpan="2">
+                                 <children>
+                                    <Label text="Email">
+                                       <styleClass>
+                                          <String fx:value="text-base" />
+                                          <String fx:value="fill-zinc-950" />
+                                       </styleClass>
+                                    </Label>
+                                    <TextField fx:id="emailTextField">
+                                       <styleClass>
+                                          <String fx:value="bg-transparent" />
+                                          <String fx:value="border" />
+                                          <String fx:value="border-zinc-200" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                       </padding>
+                                    </TextField>
+                                    <Text fx:id="emailValidatorText" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <styleClass>
+                                          <String fx:value="text-xs" />
+                                          <String fx:value="fill-red-500" />
+                                       </styleClass>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <VBox layoutX="10.0" layoutY="10.0" styleClass="spacing-1" GridPane.columnSpan="2" GridPane.rowIndex="1">
+                                 <children>
+                                    <Label text="Password">
+                                       <styleClass>
+                                          <String fx:value="text-base" />
+                                          <String fx:value="fill-zinc-950" />
+                                       </styleClass>
+                                    </Label>
+                                    <PasswordField fx:id="passwordPasswordField">
+                                       <styleClass>
+                                          <String fx:value="bg-transparent" />
+                                          <String fx:value="border" />
+                                          <String fx:value="border-zinc-200" />
+                                       </styleClass>
+                                       <padding>
+                                          <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                       </padding>
+                                    </PasswordField>
+                                    <Text fx:id="passwordValidatorText" strokeType="OUTSIDE" strokeWidth="0.0">
+                                       <styleClass>
+                                          <String fx:value="text-xs" />
+                                          <String fx:value="fill-red-500" />
+                                       </styleClass>
+                                    </Text>
+                                 </children>
+                              </VBox>
+                              <AnchorPane GridPane.columnSpan="2" GridPane.rowIndex="2">
+                                 <children>
+                                    <Button fx:id="signInButton" mnemonicParsing="false" onAction="#signInButtonOnAction" text="Sign in" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="bg-orange-500" />
+                                          <String fx:value="bg-rounded-none" />
+                                          <String fx:value="text-fill-zinc-50" />
+                                          <String fx:value="text-base" />
+                                          <String fx:value="cursor-pointer" />
+                                       </styleClass>
+                                    </Button>
+                                 </children>
+                              </AnchorPane>
+                           </children>
+                        </GridPane>
                      </children>
-                  </VBox>
-                  <VBox layoutX="10.0" layoutY="10.0" styleClass="spacing-1" GridPane.columnSpan="2" GridPane.rowIndex="1">
-                     <children>
-                        <Label text="Password">
-                           <styleClass>
-                              <String fx:value="text-base" />
-                              <String fx:value="fill-zinc-950" />
-                           </styleClass>
-                        </Label>
-                        <PasswordField fx:id="passwordPasswordField">
-                           <styleClass>
-                              <String fx:value="bg-transparent" />
-                              <String fx:value="border" />
-                              <String fx:value="border-zinc-200" />
-                           </styleClass>
-                           <padding>
-                              <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                           </padding>
-                        </PasswordField>
-                        <Text fx:id="passwordValidatorText" strokeType="OUTSIDE" strokeWidth="0.0">
-                           <styleClass>
-                              <String fx:value="text-xs" />
-                              <String fx:value="fill-red-500" />
-                           </styleClass>
-                        </Text>
-                     </children>
-                  </VBox>
-                  <VBox GridPane.columnSpan="2" GridPane.rowIndex="2">
-                     <children>
-                        <Button fx:id="signInButton" mnemonicParsing="false" onAction="#signInButtonOnAction" prefWidth="388.0" text="Sign in">
-                           <padding>
-                              <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                           </padding>
-                           <styleClass>
-                              <String fx:value="bg-orange-500" />
-                              <String fx:value="bg-rounded-none" />
-                              <String fx:value="text-fill-zinc-50" />
-                              <String fx:value="text-base" />
-                              <String fx:value="cursor-pointer" />
-                           </styleClass>
-                        </Button>
-                     </children>
-                     <GridPane.margin>
-                        <Insets top="12.0" />
-                     </GridPane.margin>
                   </VBox>
                </children>
             </GridPane>
-         </children>
-      </VBox>
+         </content>
+      </ScrollPane>
    </children>
    <stylesheets>
       <URL value="@../css/Globals.css" />

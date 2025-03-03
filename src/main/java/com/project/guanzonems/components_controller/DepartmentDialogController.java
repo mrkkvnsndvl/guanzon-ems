@@ -41,9 +41,7 @@ public class DepartmentDialogController {
     @FXML
     private void createDepartmentButtonOnAction(ActionEvent event) {
         ObjectNode validationErrors = validateDepartmentFields();
-
         clearValidationMessagesAndStyles();
-
         if (validationErrors.isEmpty()) {
             try {
                 if (selectedDepartment == null) {
@@ -91,17 +89,13 @@ public class DepartmentDialogController {
 
     private Department createDepartmentObject() {
         String department = lsDepartmentTextField.getText();
-
         int lnId = 0;
-
         return new Department(lnId, department);
     }
 
     private ObjectNode validateDepartmentFields() {
         String department = lsDepartmentTextField.getText();
-
         Integer departmentId = selectedDepartment != null ? selectedDepartment.getLnId() : null;
-
         return departmentValidator.validateDepartment(
                 department,
                 departmentId
@@ -110,7 +104,6 @@ public class DepartmentDialogController {
 
     private void displayValidationErrors(ObjectNode validationErrors) {
         resetFieldStyles();
-
         if (!validationErrors.path("departmentName").asText("").isEmpty()) {
             lsDepartmentTextField.setStyle("-fx-border-color: #ef4444;");
             lsDepartmentValidatorText.setText(validationErrors.path("departmentName").asText(""));
@@ -125,7 +118,6 @@ public class DepartmentDialogController {
 
     private void clearValidationMessagesAndStyles() {
         lsDepartmentValidatorText.setText("");
-
         resetFieldStyles();
     }
 

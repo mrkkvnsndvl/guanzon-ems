@@ -11,19 +11,29 @@
 <?import javafx.scene.control.TableView?>
 <?import javafx.scene.control.TextField?>
 <?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
 <?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
 <AnchorPane fx:id="employeeAnchorPane" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.EmployeeController">
     <children>
-      <ScrollPane AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+      <ScrollPane fitToWidth="true" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <content>
               <VBox styleClass="spacing-6">
                   <children>
-                      <HBox spacing="443.0">
-                          <children>
-                        <VBox styleClass="spacing-1">
+                  <GridPane styleClass="p-6">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox>
                            <children>
                                     <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Employees">
                                         <styleClass>
@@ -39,8 +49,12 @@
                                  </styleClass>
                               </Text>
                            </children>
+                           <styleClass>
+                              <String fx:value="spacing-1" />
+                              <String fx:value="align-center-left" />
+                           </styleClass>
                         </VBox>
-                              <HBox styleClass="spacing-3">
+                              <HBox GridPane.columnIndex="1">
                                   <children>
                                       <Button mnemonicParsing="false" onAction="#refreshButtonOnAction" text="Refresh">
                                           <styleClass>
@@ -48,8 +62,7 @@
                                               <String fx:value="bg-transparent" />
                                               <String fx:value="text-fill-zinc-950" />
                                               <String fx:value="cursor-pointer" />
-                                              <String fx:value="p-2" />
-                                    <String fx:value="bg-hover-button" />
+                                              <String fx:value="bg-hover-button" />
                                     <String fx:value="bg-rounded-none" />
                                           </styleClass>
                                       </Button>
@@ -60,66 +73,88 @@
                                               <String fx:value="text-fill-zinc-50" />
                                               <String fx:value="cursor-pointer" />
                                               <String fx:value="bg-rounded-none" />
-                                    <String fx:value="p-2" />
                                           </styleClass>
                                       </Button>
                                   </children>
+                           <styleClass>
+                              <String fx:value="spacing-3" />
+                              <String fx:value="align-center-right" />
+                           </styleClass>
                               </HBox>
-                          </children>
-                          <styleClass>
-                              <String fx:value="p-6" />
-                              <String fx:value="align-center" />
-                          </styleClass>
-                      </HBox>
-                      <HBox>
-                          <children>
-                        <VBox styleClass="spacing-1">
+                     </children>
+                  </GridPane>
+                  <GridPane>
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" />
+                        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <VBox styleClass="spacing-1" GridPane.columnIndex="3">
                            <children>
                               <Label styleClass="fill-zinc-950" text="Position" />
-                              <ChoiceBox fx:id="positionChoiceBox" prefWidth="161.0">
-                                 <padding>
-                                    <Insets bottom="4.0" top="4.0" />
-                                 </padding>
-                                 <styleClass>
-                                    <String fx:value="bg-transparent" />
-                                    <String fx:value="border" />
-                                    <String fx:value="border-zinc-200" />
-                                 </styleClass>
-                              </ChoiceBox>
+                              <AnchorPane>
+                                 <children>
+                                    <ChoiceBox fx:id="positionChoiceBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="4.0" top="4.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="bg-transparent" />
+                                          <String fx:value="border" />
+                                          <String fx:value="border-zinc-200" />
+                                       </styleClass>
+                                    </ChoiceBox>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </VBox>
-                        <VBox layoutX="1532.0" layoutY="10.0" styleClass="spacing-1">
+                        <VBox styleClass="spacing-1" GridPane.columnIndex="4">
                            <children>
                               <Label styleClass="fill-zinc-950" text="Department" />
-                              <ChoiceBox fx:id="departmentChoiceBox" prefWidth="161.0">
-                                 <padding>
-                                    <Insets bottom="4.0" top="4.0" />
-                                 </padding>
-                                 <styleClass>
-                                    <String fx:value="bg-transparent" />
-                                    <String fx:value="border" />
-                                    <String fx:value="border-zinc-200" />
-                                 </styleClass>
-                              </ChoiceBox>
+                              <AnchorPane>
+                                 <children>
+                                    <ChoiceBox fx:id="departmentChoiceBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                       <padding>
+                                          <Insets bottom="4.0" top="4.0" />
+                                       </padding>
+                                       <styleClass>
+                                          <String fx:value="bg-transparent" />
+                                          <String fx:value="border" />
+                                          <String fx:value="border-zinc-200" />
+                                       </styleClass>
+                                    </ChoiceBox>
+                                 </children>
+                              </AnchorPane>
                            </children>
                         </VBox>
-                              <TextField fx:id="searchEmployeeTextField" promptText="Search employee...">
-                                  <styleClass>
-                                      <String fx:value="bg-transparent" />
-                                      <String fx:value="border" />
-                                      <String fx:value="border-zinc-200" />
-                                  </styleClass>
-                                  <padding>
-                                      <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
-                                  </padding>
-                              </TextField>
-                          </children>
-                          <styleClass>
-                              <String fx:value="align-bottom-right" />
-                              <String fx:value="px-6" />
-                        <String fx:value="spacing-3" />
-                          </styleClass>
-                      </HBox>
+                        <VBox styleClass="spacing-1" GridPane.columnIndex="5">
+                           <children>
+                              <Label styleClass="fill-zinc-950" />
+                                    <TextField fx:id="searchEmployeeTextField" promptText="Search employee...">
+                                        <styleClass>
+                                            <String fx:value="bg-transparent" />
+                                            <String fx:value="border" />
+                                            <String fx:value="border-zinc-200" />
+                                        </styleClass>
+                                        <padding>
+                                            <Insets bottom="8.0" left="12.0" right="12.0" top="8.0" />
+                                        </padding>
+                                    </TextField>
+                           </children>
+                        </VBox>
+                     </children>
+                     <styleClass>
+                        <String fx:value="hgap-3" />
+                        <String fx:value="px-6" />
+                     </styleClass>
+                  </GridPane>
                       <VBox styleClass="px-6">
                           <children>
                               <TableView fx:id="employeeTableView">
@@ -150,7 +185,6 @@
                                       <String fx:value="text-base" />
                                       <String fx:value="cursor-pointer" />
                                       <String fx:value="bg-hover-button" />
-                              <String fx:value="p-2" />
                               <String fx:value="bg-rounded-none" />
                                   </styleClass>
                               </Button>
@@ -161,7 +195,6 @@
                                       <String fx:value="text-base" />
                                       <String fx:value="bg-rounded-none" />
                                       <String fx:value="cursor-pointer" />
-                              <String fx:value="p-2" />
                                   </styleClass>
                               </Button>
                           </children>

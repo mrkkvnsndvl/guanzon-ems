@@ -16,13 +16,11 @@ public class AlertDialogUtility {
         try {
             FXMLLoader loader = new FXMLLoader(AlertDialogUtility.class.getResource("/com/project/guanzonems/components/AlertDialog.fxml"));
             Parent root = loader.load();
-
             AlertDialogController controller = loader.getController();
             controller.setTitle(title);
             controller.setSubHeading(subHeading);
             controller.setOnCancelAction(onCancelAction);
             controller.setOnConfirmAction(onConfirmAction);
-
             Stage dialogStage = new Stage();
             dialogStage.initModality(Modality.APPLICATION_MODAL);
             dialogStage.initOwner(ownerStage);

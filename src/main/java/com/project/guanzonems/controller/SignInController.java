@@ -37,22 +37,18 @@ public class SignInController {
     private void signInButtonOnAction(ActionEvent event) {
         String email = emailTextField.getText().trim();
         String password = passwordPasswordField.getText().trim();
-
         emailValidatorText.setText("");
         passwordValidatorText.setText("");
         resetFieldStyles();
-
         ObjectNode validationErrors = adminValidator.validateAdmin(email, password);
         if (!validationErrors.isEmpty()) {
             displayValidationErrors(validationErrors);
             return;
         }
-
         signInButton.setDisable(true);
         emailTextField.setDisable(true);
         passwordPasswordField.setDisable(true);
         signInButton.setText("Signing in...");
-
         PauseTransition pause = new PauseTransition(Duration.seconds(2));
         pause.setOnFinished(e -> {
             try {
@@ -90,10 +86,8 @@ public class SignInController {
     private void displayValidationErrors(ObjectNode validationErrors) {
         String emailError = validationErrors.path("email").asText("");
         String passwordError = validationErrors.path("password").asText("");
-
         emailValidatorText.setText(validationErrors.path("email").asText(""));
         passwordValidatorText.setText(validationErrors.path("password").asText(""));
-
         if (!emailError.isEmpty()) {
             emailTextField.setStyle("-fx-border-color: #ef4444;");
         }

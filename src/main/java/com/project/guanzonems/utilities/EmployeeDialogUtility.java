@@ -22,7 +22,6 @@ public class EmployeeDialogUtility {
             EmployeeDialogController controller = loader.getController();
             controller.setOwnerAnchorPane(ownerAnchorPane);
             controller.setEmployeeController(employeeController);
-
             Stage stage = new Stage();
             stage.initOwner(ownerAnchorPane.getScene().getWindow());
             stage.initModality(Modality.APPLICATION_MODAL);
@@ -43,7 +42,6 @@ public class EmployeeDialogUtility {
             controller.setOwnerAnchorPane(ownerAnchorPane);
             controller.setSelectedEmployee(selectedEmployee);
             controller.setEmployeeController(employeeController);
-
             Stage stage = new Stage();
             stage.initOwner(ownerAnchorPane.getScene().getWindow());
             stage.initModality(Modality.APPLICATION_MODAL);

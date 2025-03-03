@@ -109,14 +109,11 @@ public class EmployeeController implements Initializable {
     @FXML
     private void updateEmployeeButtonOnAction(ActionEvent event) {
         Employee selectedEmployee = employeeTableView.getSelectionModel().getSelectedItem();
-
         if (selectedEmployee == null) {
             SonnerUtility.show(employeeAnchorPane.getScene().getWindow(), "Error", "Please select an employee to update.");
             return;
         }
-
         EmployeeDialogUtility.showForUpdate(employeeAnchorPane, selectedEmployee, this);
-
         loadEmployeesToTableView();
     }
 
@@ -141,10 +138,8 @@ public class EmployeeController implements Initializable {
         try {
             List<Employee> employees = employeeDAO.readEmployees();
             employeeList = FXCollections.observableArrayList(employees);
-
             filteredList = new FilteredList<>(employeeList, b -> true);
             employeeTableView.setItems(filteredList);
-
             searchEmployeeTextField();
         } catch (SQLException e) {
             e.printStackTrace();
@@ -201,16 +196,13 @@ public class EmployeeController implements Initializable {
     private void loadDepartmentsToChoiceBox() {
         try {
             List<Department> departments = departmentDAO.readDepartments();
-
             ObservableList<String> departmentList = FXCollections.observableArrayList();
             for (Department department : departments) {
                 departmentList.add(department.getLsDepartment());
             }
-
             departmentList.add(0, "All");
             departmentChoiceBox.setItems(departmentList);
             departmentChoiceBox.setValue("All");
-
             departmentChoiceBox.getSelectionModel().selectedItemProperty().addListener((observable, oldValue, newValue) -> {
                 positionAndDepartmentFilters();
             });
@@ -222,12 +214,9 @@ public class EmployeeController implements Initializable {
     private void positionAndDepartmentFilters() {
         String selectedPosition = positionChoiceBox.getValue();
         String selectedDepartment = departmentChoiceBox.getValue();
-
         filteredList.setPredicate(employee -> {
             boolean matchesPosition = selectedPosition == null || selectedPosition.equals("All") || employee.getLsPosition().equals(selectedPosition);
-
             boolean matchesDepartment = selectedDepartment == null || selectedDepartment.equals("All") || employee.getLsDepartment().equals(selectedDepartment);
-
             return matchesPosition && matchesDepartment;
         });
     }

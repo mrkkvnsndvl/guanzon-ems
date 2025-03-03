@@ -122,4 +122,26 @@ public class EmployeeDAO {
         }
         return departmentCounts;
     }
+
+    public Employee getEmployeeByFullName(String fullName) throws SQLException {
+        String sql = "SELECT * FROM employees WHERE sFullName = ?";
+        try (Connection conn = DatabaseConnection.getConnection(); PreparedStatement stmt = conn.prepareStatement(sql)) {
+            stmt.setString(1, fullName);
+            ResultSet rs = stmt.executeQuery();
+            if (rs.next()) {
+                return new Employee(
+                        rs.getInt("nIdxxxxxx"),
+                        rs.getString("sFullName"),
+                        rs.getInt("nAgexxxxx"),
+                        rs.getString("sEmailxxx"),
+                        rs.getString("sPhnNmber"),
+                        rs.getString("sPosition"),
+                        rs.getString("sDprtment"),
+                        rs.getDate("dDtOfJnng").toLocalDate(),
+                        rs.getDouble("nSalaryxx")
+                );
+            }
+        }
+        return null;
+    }
 }

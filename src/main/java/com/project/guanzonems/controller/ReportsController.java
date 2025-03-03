@@ -56,19 +56,15 @@ public class ReportsController implements Initializable {
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO();
             List<Employee> employees = employeeDAO.readEmployees();
-
             FileChooser fileChooser = new FileChooser();
             fileChooser.setTitle("Save Employee Data");
             fileChooser.setInitialFileName("employees-export.csv");
             fileChooser.getExtensionFilters().add(new FileChooser.ExtensionFilter("CSV Files", "*.csv"));
-
             Stage stage = (Stage) reportsAnchorPane.getScene().getWindow();
             File file = fileChooser.showSaveDialog(stage);
-
             if (file == null) {
                 return;
             }
-
             try (FileWriter writer = new FileWriter(file)) {
                 writer.append("ID,Full Name,Age,Email,Phone Number,Position,Department,Date of Joining,Salary\n");
 
@@ -85,7 +81,6 @@ public class ReportsController implements Initializable {
                             employee.getLdSalary()));
                 }
             }
-
             SonnerUtility.show(stage, "Success", "Employee data exported successfully!");
         } catch (SQLException | IOException e) {
             e.printStackTrace();
@@ -113,14 +108,11 @@ public class ReportsController implements Initializable {
         try {
             EmployeeDAO employeeDAO = new EmployeeDAO();
             Map<String, Integer> departmentCounts = employeeDAO.getEmployeeCountsByDepartment();
-
             XYChart.Series<String, Number> series = new XYChart.Series<>();
             series.setName("Employees per Department");
-
             for (Map.Entry<String, Integer> entry : departmentCounts.entrySet()) {
                 series.getData().add(new XYChart.Data<>(entry.getKey(), entry.getValue()));
             }
-
             reportsBarChart.getData().clear();
             reportsBarChart.getData().add(series);
         } catch (SQLException e) {

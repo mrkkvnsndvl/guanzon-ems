@@ -13,7 +13,6 @@ public class EmployeeValidator {
     private static final String PHONE_NUMBER_REGEX = "^[0-9]{10,15}$";
     private static final String FULL_NAME_REGEX = "^[a-zA-Z\\s]+$";
     private static final String POSITION_REGEX = "^[a-zA-Z\\s]+$";
-
     private final ObjectMapper objectMapper = new ObjectMapper();
     private final EmployeeDAO employeeDAO = new EmployeeDAO();
 

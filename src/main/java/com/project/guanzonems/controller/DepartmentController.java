@@ -53,10 +53,6 @@ public class DepartmentController implements Initializable {
     }
 
     @FXML
-    private void searchDepartmentOnAction(ActionEvent event) {
-    }
-
-    @FXML
     private void deleteDepartmentOnAction(ActionEvent event) {
         Department selectedDepartment = departmentTableView.getSelectionModel().getSelectedItem();
         if (selectedDepartment == null) {
@@ -86,14 +82,11 @@ public class DepartmentController implements Initializable {
     @FXML
     private void updateDepartmentOnAction(ActionEvent event) {
         Department selectedDepartment = departmentTableView.getSelectionModel().getSelectedItem();
-
         if (selectedDepartment == null) {
             SonnerUtility.show(departmentAnchorPane.getScene().getWindow(), "Error", "Please select a department to update.");
             return;
         }
-
         DepartmentDialogUtility.showForUpdate(departmentAnchorPane, selectedDepartment, this);
-
         loadDepartmentsToTableView();
     }
 
@@ -111,10 +104,8 @@ public class DepartmentController implements Initializable {
         try {
             List<Department> departments = departmentDAO.readDepartments();
             departmentList = FXCollections.observableArrayList(departments);
-
             filteredList = new FilteredList<>(departmentList, b -> true);
             departmentTableView.setItems(filteredList);
-
             searchDepartmentTextField();
         } catch (SQLException e) {
             e.printStackTrace();

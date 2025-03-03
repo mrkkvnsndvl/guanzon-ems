@@ -1,0 +1,305 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports"
+              xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+              xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd"
+              name="payslip" pageWidth="612" pageHeight="792" columnWidth="468" leftMargin="72" rightMargin="72" topMargin="72" bottomMargin="72">
+    
+    <!-- Parameters -->
+    <parameter name="EMPLOYEE_NAME" class="java.lang.String"/>
+    <parameter name="POSITION" class="java.lang.String"/>
+    <parameter name="PAY_FREQUENCY" class="java.lang.String"/>
+    <parameter name="GROSS_SALARY" class="java.lang.Double"/>
+    <parameter name="SSS" class="java.lang.Double"/>
+    <parameter name="PHILHEALTH" class="java.lang.Double"/>
+    <parameter name="PAGIBIG" class="java.lang.Double"/>
+    <parameter name="WITHHOLDING_TAX" class="java.lang.Double"/>
+    <parameter name="TOTAL_DEDUCTIONS" class="java.lang.Double"/>
+    <parameter name="NET_PAY" class="java.lang.Double"/>
+    <parameter name="PERIOD_END" class="java.lang.String"/>
+
+    <!-- Title Band -->
+    <title>
+        <band height="40">
+            <staticText>
+                <reportElement x="0" y="0" width="468" height="20"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="14" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Payslip]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="20" width="468" height="20"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Guanzon Group of Companies]]></text>
+            </staticText>
+        </band>
+    </title>
+
+    <!-- Detail Band -->
+    <detail>
+        <band height="608">
+            <staticText>
+                <reportElement x="0" y="20" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Employee Details]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="230" y="20" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Salary Information]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="40" width="52" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Full name:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="52" y="40" width="178" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{EMPLOYEE_NAME}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="60" width="43" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Position:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="43" y="60" width="187" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{POSITION}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="230" y="40" width="118" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Pay Frequency:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="348" y="40" width="120" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PAY_FREQUENCY}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="230" y="60" width="126" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Gross Salary:]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="357" y="60" width="111" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{GROSS_SALARY}]]></textFieldExpression>
+            </textField>
+
+            <!-- Earnings Section -->
+            <staticText>
+                <reportElement x="0" y="100" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Earnings]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="230" y="100" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Amount]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="120" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Basic]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="230" y="120" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{GROSS_SALARY}]]></textFieldExpression>
+            </textField>
+
+            <!-- Deductions Section -->
+            <staticText>
+                <reportElement x="0" y="160" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Deductions]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="230" y="160" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Amount]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="180" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Social Security System]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="230" y="180" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{SSS}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="200" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Philippine Health Insurance Corporation]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="230" y="200" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PHILHEALTH}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="220" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Pag-IBIG Fund]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="230" y="220" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PAGIBIG}]]></textFieldExpression>
+            </textField>
+            <staticText>
+                <reportElement x="0" y="240" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Withholding Tax]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="230" y="240" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{WITHHOLDING_TAX}]]></textFieldExpression>
+            </textField>
+
+            <!-- Total Deductions -->
+            <staticText>
+                <reportElement x="0" y="280" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Total Deductions]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00">
+                <reportElement x="230" y="280" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{TOTAL_DEDUCTIONS}]]></textFieldExpression>
+            </textField>
+
+            <!-- Net Pay -->
+            <staticText>
+                <reportElement x="0" y="320" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="true"/>
+                </textElement>
+                <text><![CDATA[Net Pay]]></text>
+            </staticText>
+            <textField pattern="₱#,##0.00"> 
+                <reportElement x="230" y="320" width="238" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{NET_PAY}]]></textFieldExpression>
+            </textField>
+
+            <!-- Signatures -->
+            <staticText>
+                <reportElement x="0" y="380" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Employer Signature]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="0" y="400" width="230" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[_______________________________________]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="230" y="380" width="238" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Employee Signature]]></text>
+            </staticText>
+            <staticText>
+                <reportElement x="230" y="400" width="238" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[______________________________________]]></text>
+            </staticText>
+            
+            <!--Pay Period-->
+            <staticText>
+                <reportElement x="0" y="500" width="230" height="20"/>
+                <textElement textAlignment="Right" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[Pay Period:]]></text>
+            </staticText>
+            <textField>
+                <reportElement x="230" y="500" width="238" height="20"/>
+                <textElement textAlignment="Left" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <textFieldExpression><![CDATA[$P{PERIOD_END}]]></textFieldExpression>
+            </textField>
+           
+
+            <!-- System Generated Note -->
+            <staticText>
+                <reportElement x="0" y="588" width="468" height="20"/>
+                <textElement textAlignment="Center" verticalAlignment="Middle">
+                    <font size="11" isBold="false"/>
+                </textElement>
+                <text><![CDATA[This is a system-generated payslip]]></text>
+            </staticText>
+        </band>
+    </detail>
+</jasperReport> 

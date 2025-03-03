@@ -82,9 +82,7 @@ public class EmployeeDialogController {
     @FXML
     private void createEmployeeButtonOnAction(ActionEvent event) {
         ObjectNode validationErrors = validateEmployeeFields();
-
         clearValidationMessagesAndStyles();
-
         if (validationErrors.isEmpty()) {
             try {
                 if (selectedEmployee == null) {
@@ -151,7 +149,6 @@ public class EmployeeDialogController {
                 public String toString(Department department) {
                     return department == null ? "" : department.getLsDepartment();
                 }
-
                 @Override
                 public Department fromString(String string) {
                     return null;
@@ -278,7 +275,6 @@ public class EmployeeDialogController {
         lsDepartmentValidatorText.setText("");
         ldDateOfJoiningValidatorText.setText("");
         ldSalaryValidatorText.setText("");
-
         resetFieldStyles();
     }
 

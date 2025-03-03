@@ -17,7 +17,6 @@ public class DatabaseConnection {
     public static void main(String[] args) {
         try {
             Connection connection = getConnection();
-
             if (connection != null) {
                 System.out.println("Database connection successful!");
             }

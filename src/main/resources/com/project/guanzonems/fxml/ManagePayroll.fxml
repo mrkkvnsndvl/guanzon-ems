@@ -20,7 +20,7 @@
 <?import javafx.scene.layout.VBox?>
 <?import javafx.scene.text.Text?>
 
-<AnchorPane styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.ManagePayrollController">
+<AnchorPane fx:id="managePayrollAnchorPane" styleClass="bg-zinc-50" xmlns="http://javafx.com/javafx/23.0.1" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.project.guanzonems.controller.ManagePayrollController">
    <children>
       <VBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
          <children>
@@ -104,7 +104,7 @@
                                                             <String fx:value="fill-zinc-950" />
                                                          </styleClass>
                                                       </Label>
-                                                      <TextField fx:id="grossSalaryTextField" prefHeight="35.0" prefWidth="231.0">
+                                                      <TextField fx:id="grossSalaryTextField" editable="false" prefHeight="35.0" prefWidth="231.0">
                                                          <styleClass>
                                                             <String fx:value="bg-transparent" />
                                                             <String fx:value="border" />
@@ -124,7 +124,7 @@
                                                             <String fx:value="fill-zinc-950" />
                                                          </styleClass>
                                                       </Label>
-                                                      <TextField fx:id="positionTextField" prefHeight="35.0" prefWidth="231.0">
+                                                      <TextField fx:id="positionTextField" editable="false" prefHeight="35.0" prefWidth="231.0">
                                                          <styleClass>
                                                             <String fx:value="bg-transparent" />
                                                             <String fx:value="border" />
@@ -146,7 +146,7 @@
                                                       </Label>
                                                       <AnchorPane>
                                                          <children>
-                                                            <ChoiceBox AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                            <ChoiceBox fx:id="payFrequencyChoiceBox" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                                <styleClass>
                                                                   <String fx:value="bg-transparent" />
                                                                   <String fx:value="border" />
@@ -163,7 +163,7 @@
                                                 </VBox>
                                                 <AnchorPane GridPane.rowIndex="5">
                                                    <children>
-                                                      <Button mnemonicParsing="false" text="Calculate Payroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <Button mnemonicParsing="false" onAction="#calculatePayrollButtonOnAction" text="Calculate Payroll" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <styleClass>
                                                             <String fx:value="bg-orange-500" />
                                                             <String fx:value="text-sm" />
@@ -251,13 +251,13 @@
                                                          <children>
                                                             <HBox styleClass="spacing-0_5">
                                                                <children>
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Name:">
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Full name:">
                                                                      <styleClass>
                                                                         <String fx:value="text-sm" />
                                                                         <String fx:value="fill-zinc-500" />
                                                                      </styleClass>
                                                                   </Text>
-                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Mark">
+                                                                  <Text fx:id="employeeFullNameText" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                      <styleClass>
                                                                         <String fx:value="text-sm" />
                                                                         <String fx:value="fill-zinc-500" />
@@ -273,7 +273,7 @@
                                                                         <String fx:value="fill-zinc-500" />
                                                                      </styleClass>
                                                                   </Text>
-                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Programmer">
+                                                                  <Text fx:id="positionText" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                      <styleClass>
                                                                         <String fx:value="text-sm" />
                                                                         <String fx:value="fill-zinc-500" />
@@ -304,7 +304,7 @@
                                                                         <String fx:value="fill-zinc-500" />
                                                                      </styleClass>
                                                                   </Text>
-                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Monthly">
+                                                                  <Text fx:id="payFrequencyText" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                      <styleClass>
                                                                         <String fx:value="text-sm" />
                                                                         <String fx:value="fill-zinc-500" />
@@ -320,7 +320,7 @@
                                                                         <String fx:value="fill-zinc-500" />
                                                                      </styleClass>
                                                                   </Text>
-                                                                  <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱30000.00">
+                                                                  <Text fx:id="grossSalaryText" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                      <styleClass>
                                                                         <String fx:value="text-sm" />
                                                                         <String fx:value="fill-zinc-500" />
@@ -382,31 +382,31 @@
                                                    <children>
                                                       <VBox>
                                                          <children>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱1125.00">
+                                                            <Text fx:id="sssContributionText" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-950" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱450.00">
+                                                            <Text fx:id="philhealthContributionText" layoutX="10.0" layoutY="25.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-950" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="10.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱100.00">
+                                                            <Text fx:id="pagibigContributionText" layoutX="10.0" layoutY="48.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-950" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="10.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱1833.40">
+                                                            <Text fx:id="withholdingTaxText" layoutX="10.0" layoutY="71.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-950" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text layoutX="191.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0" text="₱3508.40">
+                                                            <Text fx:id="totalDeductionsText" layoutX="191.0" layoutY="109.0" strokeType="OUTSIDE" strokeWidth="0.0">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-950" />
@@ -431,7 +431,7 @@
                                                 </Text>
                                                 <VBox styleClass="align-center-right" GridPane.columnIndex="1" GridPane.rowIndex="5">
                                                    <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱26491.60">
+                                                      <Text fx:id="netSalaryText" strokeType="OUTSIDE" strokeWidth="0.0">
                                                          <styleClass>
                                                             <String fx:value="text-base" />
                                                             <String fx:value="font-bold" />
@@ -466,7 +466,7 @@
                      <content>
                         <VBox>
                            <children>
-                              <VBox>
+                              <VBox fx:id="payslipVbox">
                                  <children>
                                     <ScrollPane fitToHeight="true" fitToWidth="true">
                                        <content>
@@ -497,7 +497,7 @@
                                                                   <String fx:value="font-bold" />
                                                                </styleClass>
                                                             </Text>
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" text="For the period ending 2/24/2025">
+                                                            <Text fx:id="forThePeriodEndingText" strokeType="OUTSIDE" strokeWidth="0.0" text="For the period ending ">
                                                                <styleClass>
                                                                   <String fx:value="text-sm" />
                                                                   <String fx:value="fill-zinc-500" />
@@ -524,20 +524,20 @@
                                                             </Text>
                                                             <HBox styleClass="spacing-0_5">
                                                                <children>
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Name:" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Mark Kevin J Sandoval" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Full name:" />
+                                                                  <Text fx:id="payslipEmployeeFullNameText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
                                                                </children>
                                                             </HBox>
                                                             <HBox styleClass="spacing-0_5">
                                                                <children>
                                                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Position:" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Programmer" />
+                                                                  <Text fx:id="payslipPositionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
                                                                </children>
                                                             </HBox>
                                                             <HBox styleClass="spacing-0_5">
                                                                <children>
                                                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Pay Frequency:" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Monthly" />
+                                                                  <Text fx:id="payslipPayFrequencyText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
                                                                </children>
                                                             </HBox>
                                                          </children>
@@ -552,9 +552,9 @@
                                                             </Text>
                                                             <VBox styleClass="spacing-0_5">
                                                                <children>
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="SSS:" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="PhilHealth:" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Pag-IBIG:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Social Security System:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Philippine Health Insurance Corporation:" />
+                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Pag-IBIG Fund:" />
                                                                   <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="Withholding Tax:" />
                                                                </children>
                                                             </VBox>
@@ -586,7 +586,7 @@
                                                       <VBox>
                                                          <children>
                                                             <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
-                                                            <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱30000.00" />
+                                                            <Text fx:id="payslipBasicSalaryText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
                                                          </children>
                                                          <styleClass>
                                                             <String fx:value="spacing-1_5" />
@@ -615,10 +615,10 @@
                                                             </Text>
                                                             <VBox>
                                                                <children>
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱1125.00" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱450.00" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱100.00" />
-                                                                  <Text strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" text="₱1833.40" />
+                                                                  <Text fx:id="payslipSssContributionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
+                                                                  <Text fx:id="payslipPhilhealthContributionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
+                                                                  <Text fx:id="payslipPagibigContributionText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
+                                                                  <Text fx:id="payslipWithholdingTaxText" strokeType="OUTSIDE" strokeWidth="0.0" styleClass="text-sm" />
                                                                </children>
                                                                <styleClass>
                                                                   <String fx:value="spacing-1_5" />
@@ -646,7 +646,7 @@
                                                 </VBox>
                                                 <VBox layoutX="10.0" layoutY="427.0" GridPane.columnIndex="2" GridPane.rowIndex="3">
                                                    <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱3508.40">
+                                                      <Text fx:id="payslipTotalDeductionsText" strokeType="OUTSIDE" strokeWidth="0.0">
                                                          <styleClass>
                                                             <String fx:value="text-base" />
                                                             <String fx:value="font-bold" />
@@ -675,7 +675,7 @@
                                                 </VBox>
                                                 <VBox layoutX="10.0" layoutY="487.0" GridPane.columnIndex="2" GridPane.rowIndex="5">
                                                    <children>
-                                                      <Text strokeType="OUTSIDE" strokeWidth="0.0" text="₱26491.60">
+                                                      <Text fx:id="payslipNetPayText" strokeType="OUTSIDE" strokeWidth="0.0">
                                                          <styleClass>
                                                             <String fx:value="text-lg" />
                                                             <String fx:value="font-bold" />
@@ -694,7 +694,7 @@
                                                 </VBox>
                                                 <AnchorPane GridPane.columnSpan="3" GridPane.rowIndex="7">
                                                    <children>
-                                                      <Button mnemonicParsing="false" text="Print Slip" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+                                                      <Button mnemonicParsing="false" onAction="#printPayslipButtonOnAction" text="Print Payslip" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
                                                          <styleClass>
                                                             <String fx:value="bg-orange-500" />
                                                             <String fx:value="text-sm" />
